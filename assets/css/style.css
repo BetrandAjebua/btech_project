@@ -1,7 +1,7 @@
 
 :root{
   --bmedium:#B30E08;
-  --bdark: #7D221D;
+  --bdark: #491411;
   --blight: #E10600;
 
 }
@@ -161,9 +161,9 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
-  font-size: 15px;
-  font-weight: 500;
+  padding: 4px 0 10px 30px;
+  font-size: 20px;
+  font-weight: 600;
   color: #fff;
   white-space: nowrap;
   transition: 0.3s;
@@ -176,7 +176,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: var(--bmedium);
+  color: wheat;
+  font:bold;
 }
 
 .navbar .getstarted {
@@ -185,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50px;
   color: #fff;
   font-size: 14px;
-  border: 2px solid var(--bmedium);
+  border: 2px solid whitesmoke;
   font-weight: 600;
 }
 
@@ -219,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
   text-transform: none;
   font-weight: 500;
-  color: #0c3c53;
+  color: var(--bdark);
 }
 
 .navbar .dropdown ul a i {
