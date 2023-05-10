@@ -1,7 +1,7 @@
 
 :root{
   --bmedium:#B30E08;
-  --bdark: #491411;
+  --bdark: #110504;
   --blight: #E10600;
 
 }
@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: wheat;
+  color: var(--blight);
   font:bold;
 }
 
