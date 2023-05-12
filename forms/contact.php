@@ -1,41 +1,23 @@
 <?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
+require "../connect.php";
 
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
+  try{
+    if(!isset($_POST["submit"])){
+      $user= htmlentities($_POST["name"]);
+      $email= htmlentities($_POST["email"]);
+      $subject= htmlentities($_POST["subject"]);
+      $message= htmlentities($_POST["message"]);
+      
+      $query = "INSERT INTO contact_us (user_name,	user_email,	user_subject,	user_message)
+       VALUES ('$user', '$email', '$subject','$message')";
+       $prepare= $db->prepare($query);
+       $er= $prepare->execute();
+  echo($er);
+  header("location: ../index.php");
+    }
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }catch(PDOException $e){
+    echo $e->getMessage();
   }
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
-
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
-
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
-
-  echo $contact->send();
 ?>
