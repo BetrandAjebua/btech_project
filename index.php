@@ -570,7 +570,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="forms/contact.php" method="post" role="form" class="email-form">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -613,7 +613,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <h4>Join Our Team</h4>
-            <p>Do you have interest of being a part of this comunity?</p>
+            <p>Do you have interest of being a part of this community?</p>
             <form action="" method="post">
               <input placeholder="Please Enter your Email here" type="email" name="email"><input type="submit" value="Yes!">
             </form>
