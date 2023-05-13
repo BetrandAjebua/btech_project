@@ -402,10 +402,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 10px 0 0 0;
   color: #fff;
   background: var(--bmedium);
+  border: 2px solid white;
 }
 
 #hero .btn-get-started:hover {
-  background: var(--bmedium);
+  background: var(--blight);
+  border: 2px solid wheat;
 }
 
 #hero .btn-watch-video {
@@ -1467,7 +1469,7 @@ section {
 .contact .php-email-form .validate {
   display: none;
   color: red;
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
   font-weight: 400;
   font-size: 13px;
 }
@@ -1488,7 +1490,6 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #fff;
-  background: #18d26e;
   text-align: center;
   padding: 15px;
   font-weight: 600;

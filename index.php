@@ -52,25 +52,40 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li class="dropdown"><a href="#"><span>Donation</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <l74i class="dropdown"><a href="#"><span>Donor</span> <i class="bi bi-chevron-right"></i></a>
+              <li class="dropdown"><a href="#"><span>Donor</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Register</a></li>
-                  <li><a href="#">login</a></li>
-               
+                  <li><a href="/donor_section/register.html">Register</a></li>
+                  <li><a href="/donor_section/login.html">login</a></li>
+
                 </ul>
               </li>
               <li><a href="#">Find Donor</a></li>
-                  <li><a href="#">Donation details</a></li>
-                  <li><a href="#">Donate</a></li>
+              <li><a href="#">Donation details</a></li>
+              <li><a href="#">Donate</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Patient</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+           
+              <li><a href="/request_section/login.html">Login</a></li>
+              <li><a class="scrollto" href="/request_section/request.html">Request Registration</a></li>
+
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/admin_section/alogin.html">Login</a></li>
+              <li><a class="scrollto" href="#contact">Contact Admin</a></li>
+
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
         </ul>
+
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -569,7 +584,7 @@
 
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <div class="col-lg-7 mt-5 mt-lg-4 d-flex align-items-stretch">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
@@ -590,7 +605,11 @@
                 <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
               <div class="my-3">
-               <div class="text-center"><button type="submit">Send Message</button></div>
+                <div class="loading" hidden>Loading</div>
+
+                <div class="sent-message" hidden>Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center "><button type="submit">Send Message</button></div>
             </form>
           </div>
 
