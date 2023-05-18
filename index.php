@@ -1,63 +1,13 @@
 <?php require_once "./assets/connection/connect.php" ?>
 <!DOCTYPE html>
 <html lang="en">
-
+<!--Head Section-->
 <?php include "./assets/connection/head.php" ?>
 
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center">
-
-      <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Donation</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li class="dropdown"><a href="#"><span>Donor</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="/donor_section/register.html">Register</a></li>
-                  <li><a href="/donor_section/login.html">login</a></li>
-
-                </ul>
-              </li>
-              <li><a href="#">Find Donor</a></li>
-              <li><a href="#">Donation details</a></li>
-              <li><a href="#">Donate</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Patient</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-           
-              <li><a href="/request_section/login.html">Login</a></li>
-              <li><a class="scrollto" href="/request_section/request.html">Request Registration</a></li>
-
-            </ul>
-          </li>
-          <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="/admin_section/alogin.html">Login</a></li>
-              <li><a class="scrollto" href="#contact">Contact Admin</a></li>
-
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-        </ul>
-
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
+  <?php include "./assets/connection/header.php" ?>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -589,87 +539,7 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Team</h4>
-            <p>Do you have interest of being a part of this community?</p>
-            <form action="" method="post">
-              <input placeholder="Please Enter your Email here" type="email" name="email"><input type="submit" value="Yes!">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>BBMS</h3>
-            <p>
-              Checkpoint Molyko <br>
-              Buea, 00000<br>
-              Cameroon <br><br>
-              <strong>Phone:</strong> +237 673 416 201<br>
-              <strong>Email:</strong> betrandajebua@gmail.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Blood Transfusion</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Blood Donation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Medical Checkup</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Emergency Health care</a></li>
-
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>See more of what we do by visiting any of the below listed social media platform</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        &copy; Copyright <strong><span>BetrandAjebua</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
-        Designed by <a href="https://bootstrapmade.com/">Betrand Ajebua</a>
-      </div>
-
-
-
-    </div>
+  <?php include "./assets/connection/footer.php" ?>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
