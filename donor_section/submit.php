@@ -15,10 +15,12 @@ try{
         $pnumber= htmlentities($_POST["p-number"]);
         $phaddress = htmlentities($_POST["ph-address"]);
 
-        $query= $db->prepare("INSERT INTO donor (d_name, d_password	,d_email, d_number,	d_city,	d_home_address,
+        if($dname!=""){
+            $query= $db->prepare("INSERT INTO donor (d_name, d_password	,d_email, d_number,	d_city,	d_home_address,
         	d_blood_group, d_mstatus, guadian_name, guadian_number, guadian_home_address, d_age	) VALUES
              ('$dname','$password', '$demail','$tel', '$city', '$haddress', '$bgroup','$mstatus','$pname', '$pnumber', '$phaddress', '$age')");
             $exe = $query->execute();
+        }
             if(!$exe){
                 echo ("Submission Failed");
             }

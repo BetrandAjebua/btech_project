@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
 <?php include "../assets/connection/head.php" ;?>
+
 </head>
 
 
 <body  class="bg-dark">
 <?php include "../assets/connection/header.php" ;?>
+<?php 
+$blgroup=$location=$message=$query="";
+if(isset($_POST["b_group"]) & isset($_POST["location"])){
+  $blgroup = htmlentities($_POST['b_group']);
+$location = htmlentities($_POST['location']);
+
+if(!empty($blgroup) & !empty($location)){
+  $query = $db->prepare("SELECT * FROM donor WHERE d_city='$location'");
+$query->execute();
+if($query->execute()){$data=$query->fetchAll();}
+}
+
+
+}
+
+
+?>
 
 
   <main id="main">
@@ -17,8 +34,9 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
+          <li><a href="../index.php">Home</a></li>
           <li>Find Donor </li>
+          <li><?php echo($location) ?></li>
         </ol>
     
 
@@ -27,7 +45,7 @@
 
     <section class="inner-page">
     <div class="container col-lg-7 mt-5 mt-lg-0  text-white">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="<?php $_SERVER["PHP_SELF"] ?>" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-4">
                   <label for="b_group">Blood-Gorup</label>
@@ -50,6 +68,47 @@
       
     </section>
 
+<!-- Table Section -->
+
+
+    <section <?php if(!empty($blgroup) & !empty($location)){?> class="inner-page">
+  <div class="container">
+	<table class="table table-sm text-white">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Number</th>
+      <th scope="col">City</th>
+      <th scope="col">Home Address</th>
+      <th scope="col">Blood Group</th>
+      <th scope="col">Age</th>
+    </tr>
+  </thead>
+  <tbody <?php foreach ($data as $key => $value) {
+   
+   ?>>
+    <tr>
+   
+      <td><?php echo($value["d_name"])?></td>
+      <td><?php echo($value["d_email"])?></td>
+      <td><?php echo($value["d_number"])?></td>
+      <td><?php echo($value["d_city"])?></td>
+      <td><?php echo($value["d_home_address"])?></td>
+      <td><?php echo($value["d_blood_group"])?></td>
+      <td><?php echo($value["d_age"])?></td>
+      
+    </tr>
+ 
+  </tbody <?php }  ?>>
+</table>
+
+	</div>
+</div>
+      
+    </section <?php }?>>
+
+
   </main><!-- End #main -->
   <script>
 let lo = document.querySelectorAll('.nav-link');
@@ -60,6 +119,8 @@ lo.forEach(element => {
   });
 });
   </script>
+
+
 
   <!-- ======= Footer ======= -->
   <footer id="footer">

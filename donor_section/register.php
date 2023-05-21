@@ -1,4 +1,4 @@
-<?php require_once "../connect.php";?>
+<?php require_once "../assets/connection/connect.php";?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +28,7 @@
     <div>
         
             <div class="f-name">
-                <label for="f-name" class="l-input">First Name</label>
+                <label for="f-name" class="l-input">Full Names</label>
                 <input type="text" name="f-name" id="f-name" class="I-input" required>
             </div>
             
@@ -127,7 +127,7 @@
 </div>
 
 <!--SUBMISSION SECTION-->
-<input type="button" value="submit Request" id="click">
+<input type="button" value="Submit-Request" id="click">
     
 <!--Alert Box-->
 <div class="hidden-submit text-center" style="display: none; position: absolute bg-danger text-white; top: 23em;">

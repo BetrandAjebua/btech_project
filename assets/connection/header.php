@@ -1,3 +1,4 @@
+<?php include "connect.php"?>
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
@@ -20,7 +21,7 @@
 
                 </ul>
               </li>
-              <li><a href="#">Find Donor</a></li>
+              <li><a href="/donor_section/findDonor.php">Find Donor</a></li>
               <li><a href="#">Donation details</a></li>
               <li><a href="#">Donate</a></li>
             </ul>
