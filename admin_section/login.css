@@ -77,8 +77,10 @@ input{
 
 
 .form-con{
+    margin-top: 10vh;
     padding: 2em;
     border-radius: 60px;
+    max-height: 46vh;
 }
 .hidden-submit{
   

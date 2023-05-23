@@ -1,5 +1,5 @@
-<?php require "../connect.php"?>
-
+<?php require "../assets/connection/connect.php"?>
+<?php include "submit.php"?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,15 +13,16 @@
     <meta charset="UTF-8"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include "../assets/connection/head.php" ?>
     <title>BBMS-login</title>
 </head>
 
 <body class="container-fluid bg-dark">
-    
+<?php include "../assets/connection/header.php" ?> 
     <p class="opa bg-dark" style="display:none;"></p>
     <!--LOGIN FORM FOR THE DONOR-->
     <div class="form-con text-danger col-8 bg-white">
-        <form action="submit.php" method="post">
+        <form action="<?php $_SELF ?>" method="post" role="form">
             <h1 class="text-center ">Patient Registration</h1>
 
             <!--NAME SECTION-->
@@ -102,7 +103,7 @@
 <input type="button" value="Submit Request" class= "mt-2 ml-3 rounded border-danger bg-danger p-1 text-white h6" class="click" id="click">
     <!--LOGIN INSTEAD-->
 <div class="login-inst">
-    <a class="text-white h6" href="login.html">Login instead?</a>
+    <a class="text-white h6" href="login.php">Login instead?</a>
 </div>
 <!--END OF LOGIN INSTEAD-->
 
@@ -119,9 +120,11 @@
     
     
    </body>
+   
 <script src="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script></script>
 <script src="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 <script src="register.js"></script>
+<?php include "../assets/connection/redirectedjs.php" ?>
 </html>
 <?php 
 

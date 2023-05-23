@@ -1,4 +1,5 @@
 <?php require_once "../assets/connection/connect.php";?>
+<?php include "submit.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +13,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include "../assets/connection/head.php" ?>
     <title>BBMS-login</title>
 </head>
 
 <body class="container-fluid bg-dark">
-    
+<?php include "../assets/connection/header.php" ;?> 
     <p class="opa bg-dark" style="display:none;"></p>
     <!--LOGIN FORM FOR THE DONOR-->
     <div class="form-con text-danger col-8 bg-white">
-        <form action="<?php $_SELF?>"  method="post" role="form">
+        <form action="<?php $_SERVER['PHP_SELF']?>"  method="post" role="form">
             <h1 class="text-center ">Donor Registration</h1>
 
             <!--NAME SECTION-->
@@ -138,12 +140,13 @@
 </div>
         </form>
     </div>
-    
+
     
    </body>
-   <?php include "submit.php" ?>
+
    <script src="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/external/jquery/jquery.js"></script></script>
 <script src="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
 <script src="register.js"></script>
+<?php include "../assets/connection/redirectedjs.php" ?>
 </html>
 <?php ?>

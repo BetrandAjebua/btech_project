@@ -81,6 +81,7 @@ input{
   }
 
 .form-con{
+  margin-top: 14vh;
     padding: 2em;
     border-radius: 60px;
 }

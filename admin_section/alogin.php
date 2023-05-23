@@ -1,4 +1,5 @@
-
+<?php require "../assets/connection/connect.php"?>
+<?php include "submit.php"?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,15 +13,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBMS-login</title>
+    <?php require "../assets/connection/head.php"?>
+    <title>admin-login</title>
 </head>
 
 <body class="container-fluid bg-dark">
-    
+<?php require "../assets/connection/header.php"?>
 
     <!--LOGIN FORM FOR THE DONOR-->
     <div class="form-con text-danger col-9 bg-white">
-        <form action="SUBMIT.PHP" method="post" >
+        <form action="<?php $_SELF?>" method="post" role="form" >
             <p><i>system will be locked if you enter Wrong password more than 5 times</i></p>
             <h1 class="text-center mb-5">Admin Login</h1>
 
@@ -46,6 +48,7 @@
         <script src="jquery.js"></script></script>
         <script src="jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
         <script src="register.js"></script>
+        <?php include "../assets/connection/redirectedjs.php" ?>
 </body>
 
 </html>

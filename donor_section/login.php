@@ -1,3 +1,28 @@
+<?php require_once "../assets/connection/connect.php"; ?>
+<?php
+try {
+    $test = "no";
+    if (!empty($_POST)) {
+        $dname = htmlentities($_POST["f-name"]);
+        $password1 = htmlentities($_POST["password"]);
+
+        $query = $db->prepare("SELECT * FROM donor WHERE d_name='$dname'");
+        $query->execute();
+        $test = $password1;
+        if ($query->rowCount() > 0) {
+            foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
+               if(password_verify($password1 , $value->d_password)){
+header("Location: ../index.php");
+               }
+            }
+        }
+    }
+
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo ("Error: " . $e->getMessage());
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,13 +39,12 @@
     <?php include "../assets/connection/head.php" ?>
     <title>BBMS-login</title>
 </head>
+<?php include "../assets/connection/header.php" ?>
 
 <body class="container-fluid bg-dark">
-
-    <?php include "../assets/connection/header.php" ?>
     <!--LOGIN FORM FOR THE DONOR-->
     <div class="form-con text-danger col-9 bg-white">
-        <form action="">
+        <form action="<?php $_SELF ?>" method="post" role="form">
             <h1 class="text-center mb-5">Donor Login</h1>
 
             <!--NAME SECTION-->
@@ -36,7 +60,7 @@
                     <input type="password" name="password" id="l-name" class="I-input" required>
                 </div>
                 <br>
-                <button type="submit" class="bg-danger text-white h6 p-1">Submit</button>
+                <input type="submit" value="Submit" class="bg-danger text-white h6 p-1">
                 <a href="register.html" class="text-danger reg-log">Register?</a>
                 <br>
             </div>
@@ -47,7 +71,7 @@
     </script>
     <script src="jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
     <script src="register.js"></script>
-
+    <?php include "../assets/connection/redirectedjs.php" ?>
 </body>
 
 </html>

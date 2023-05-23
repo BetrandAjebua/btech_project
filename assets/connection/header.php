@@ -17,7 +17,7 @@
               <li class="dropdown"><a href="#"><span>Donor</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="/donor_section/register.html">Register</a></li>
-                  <li><a href="/donor_section/login.html">login</a></li>
+                  <li><a href="/donor_section/login.php">login</a></li>
 
                 </ul>
               </li>
@@ -29,14 +29,14 @@
           <li class="dropdown"><a href="#"><span>Patient</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
            
-              <li><a href="/request_section/login.html">Login</a></li>
-              <li><a class="scrollto" href="/request_section/request.html">Request Registration</a></li>
+              <li><a href="/request_section/login.php">Login</a></li>
+              <li><a class="scrollto" href="/request_section/request.php">Request Registration</a></li>
 
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/admin_section/alogin.html">Login</a></li>
+              <li><a href="/admin_section/alogin.php">Login</a></li>
               <li><a class="scrollto" href="#contact">Contact Admin</a></li>
 
             </ul>

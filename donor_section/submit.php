@@ -1,6 +1,6 @@
 <?php
 try{
-    if(!isset($_POST["submit"])){
+    if(!empty($_POST)){
         $dname = htmlentities($_POST["f-name"]);
         $password = password_hash(htmlentities($_POST["l-password"]), PASSWORD_DEFAULT);
         $rpas = htmlentities($_POST["r-password"]);
@@ -23,6 +23,8 @@ try{
         }
             if(!$exe){
                 echo ("Submission Failed");
+            }else{
+                header("location:../index.php");
             }
     }
 
