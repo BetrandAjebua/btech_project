@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="login1.css">
+    <link rel="stylesheet" href="head.css">
     <link rel="stylesheet" href="../bootstrap-5.2.3-dist/bootstrap-5.2.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.structure.css">
     <link rel="stylesheet" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.theme.css">
@@ -11,14 +11,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include "../assets/connection/head.php" ?>
     <title>BBMS-login</title>
 </head>
-<body class="container-fluid bg-dark">
-    
 
+<body class="container-fluid bg-dark">
+
+    <?php include "../assets/connection/header.php" ?>
     <!--LOGIN FORM FOR THE DONOR-->
     <div class="form-con text-danger col-9 bg-white">
-        <form action="" >
+        <form action="">
             <h1 class="text-center mb-5">Donor Login</h1>
 
             <!--NAME SECTION-->
@@ -34,16 +36,18 @@
                     <input type="password" name="password" id="l-name" class="I-input" required>
                 </div>
                 <br>
-                <button type="submit" class="bg-danger text-white h6 p-1" >Submit</button>
+                <button type="submit" class="bg-danger text-white h6 p-1">Submit</button>
                 <a href="register.html" class="text-danger reg-log">Register?</a>
                 <br>
             </div>
 
         </form>
+    </div>
+    <script src="jquery.js"></script>
+    </script>
+    <script src="jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
+    <script src="register.js"></script>
 
-        <script src="jquery.js"></script></script>
-        <script src="jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.js"></script>
-        <script src="register.js"></script>
 </body>
 
 </html>

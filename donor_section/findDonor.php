@@ -15,7 +15,7 @@ if(isset($_POST["b_group"]) & isset($_POST["location"])){
 $location = htmlentities($_POST['location']);
 
 if(!empty($blgroup) & !empty($location)){
-  $query = $db->prepare("SELECT * FROM donor WHERE d_city='$location'");
+  $query = $db->prepare("SELECT * FROM donor WHERE d_city='$location' AND d_blood_group='$blgroup'");
 $query->execute();
 if($query->execute()){$data=$query->fetchAll();}
 }
