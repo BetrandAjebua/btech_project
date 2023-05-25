@@ -2,9 +2,9 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Arsha</a></h1>
+      <!-- <h1 class="logo me-auto"><a href="index.php">K-BBMS</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="index.php" class="logo me-auto"><img src="assets/img/apple-touch-icon.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -16,7 +16,7 @@
             <ul>
               <li class="dropdown"><a href="#"><span>Donor</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="/donor_section/register.html">Register</a></li>
+                  <li><a href="/donor_section/register.php">Register</a></li>
                   <li><a href="/donor_section/login.php">login</a></li>
 
                 </ul>
@@ -37,7 +37,7 @@
           <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/admin_section/alogin.php">Login</a></li>
-              <li><a class="scrollto" href="#contact">Contact Admin</a></li>
+              <li><a class="scrollto nav-link" href="#contact">Contact Admin</a></li>
 
             </ul>
           </li>
