@@ -126,7 +126,14 @@
 <div class="ph-address">
     <label for="ph-address" class="l-input">Home Address</label>
     <input type="text" name="ph-address" id="ph-address"  class="I-input" required>
+    
 </div>
+
+<div class="ph-address">
+<input type="file" name="image">
+    
+</div>
+    
 
 <!--SUBMISSION SECTION-->
 <input type="button" value="Submit-Request" id="click">
