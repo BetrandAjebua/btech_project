@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/assets/img/apple-touch-icon.png">
 
-  <link id="pagestyle" href="<?php  if($_SERVER['REQUEST_URI']==='/admin_panel/pages/donor.php')
+  <link id="pagestyle" href="<?php  if($_SERVER['REQUEST_URI']!=='/admin_panel/index.php')
   {echo('../assets/css/material-dashboard.css?v=3.0.0');}else{echo('./assets/css/material-dashboard.css?v=3.0.0');} ?>" rel="stylesheet" />
 
  
