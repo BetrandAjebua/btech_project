@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,6 +130,16 @@
                     </tr>
                   </thead>
                   <tbody>
+                   
+<?php   
+$query= $db->prepare("SELECT * FROM donor");
+$query->execute();
+
+foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
+  
+
+
+?>
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
@@ -135,7 +147,7 @@
                             <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">John Michael</h6>
+                            <h6 class="mb-0 text-sm"><?php echo($value->d_name);   ?></h6>
                             <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
                           </div>
                         </div>
@@ -156,7 +168,7 @@
                         </a>
                       </td>
                     </tr>
-                    
+                    <?php  }?>
                   </tbody>
                 </table>
               </div>
