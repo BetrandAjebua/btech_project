@@ -60,7 +60,7 @@ header("Location: ../index.php");
                     <input type="password" name="password" id="l-name" class="I-input" required>
                 </div>
                 <br>
-                <input type="submit" value="Submit" class="bg-danger text-white h6 p-1">
+                <input type="submit" value="Submit" class="bg-gradient-danger text-white h6 p-1">
                 <a href="register.html" class="text-danger reg-log">Register?</a>
                 <br>
             </div>

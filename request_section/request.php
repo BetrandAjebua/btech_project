@@ -78,10 +78,10 @@
             <div class="b-group">
                 <label for="b-group" class="l-input">Blood Group</label>
             <select id="b-select" name="p-bg"  >
-                <option class="bg-danger text-white"value="A">A</option>
-                <option  class="bg-danger text-white" value="B">B</option>
-                <option class="bg-danger text-white" value="AB">AB</option>
-                <option class="bg-danger text-white"  value="O">O</option>
+                <option class="bg-gradient-danger text-white"value="A">A</option>
+                <option  class="bg-gradient-danger text-white" value="B">B</option>
+                <option class="bg-gradient-danger text-white" value="AB">AB</option>
+                <option class="bg-gradient-danger text-white"  value="O">O</option>
             </select>
             </div>
   <!--Gender-->
@@ -89,8 +89,8 @@
   <div class="m-status">
       <label for="p_gender" class="l-input">Gender</label>
   <select id="b-select" name="p-gender">
-      <option class="bg-danger text-white" value="Maried">male</option>
-      <option class="bg-danger text-white" value="Single">female</option>
+      <option class="bg-gradient-danger text-white" value="Maried">male</option>
+      <option class="bg-gradient-danger text-white" value="Single">female</option>
   </select>
   </div>
 
@@ -100,7 +100,7 @@
     </div>
 
 <!--SUBMISSION SECTION-->
-<input type="button" value="Submit Request" class= "mt-2 ml-3 rounded border-danger bg-danger p-1 text-white h6" class="click" id="click">
+<input type="button" value="Submit Request" class= "mt-2 ml-3 rounded border-danger bg-gradient-danger p-1 text-white h6" class="click" id="click">
     <!--LOGIN INSTEAD-->
 <div class="login-inst">
     <a class="text-white h6" href="login.php">Login instead?</a>

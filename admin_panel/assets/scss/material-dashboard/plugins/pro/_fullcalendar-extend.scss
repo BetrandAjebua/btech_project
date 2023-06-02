@@ -77,17 +77,17 @@ Docs & License: https://fullcalendar.io/
   }
 }
 
-.fc .fc-button-primary{
-  background-color: $primary;
-  border-color: $primary;
+.fc .fc-button-danger{
+  background-color: $danger;
+  border-color: $danger;
   &:hover,
   &:focus,
   &:not(:disabled):active,
   &:not(:disabled):active:focus{
     transform: $btn-hover-transform;
     box-shadow: $btn-hover-box-shadow;
-    background-color: $primary;
-    border-color: $primary;
+    background-color: $danger;
+    border-color: $danger;
   }
 }
 

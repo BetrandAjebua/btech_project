@@ -24,7 +24,7 @@
         </div>
         <a href="javascript:void(0)" class="switch-trigger background-color">
           <div class="badge-colors my-2 text-start">
-            <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+            <span class="badge filter bg-gradient-danger active" data-color="danger" onclick="sidebarColor(this)"></span>
         </a>
         <!-- Sidenav Type -->
         <div class="mt-3">

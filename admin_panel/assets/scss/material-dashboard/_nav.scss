@@ -23,7 +23,7 @@
         color: $dark;
       }
     }
-    &.nav-pills-primary {
+    &.nav-pills-danger {
       background: $white;
       color: $white;
       .nav-link{
@@ -33,8 +33,8 @@
       }
       .moving-tab {
         .nav-link.active {
-          background: $primary-gradient;
-          color: $primary-gradient;
+          background: $danger-gradient;
+          color: $danger-gradient;
         }
       }
     }

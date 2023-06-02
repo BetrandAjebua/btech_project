@@ -151,10 +151,10 @@
             ?>
 
               <div class=" alert alert-dark alert-dismissible text-white pl-2 text-sm " role="alert">
-                <span  style="margin-right:8vw"><p style="visibility:none" class="text-left text-bolder" class="text-left" ><?php echo "@".($value['submit_time'])." <hr>" ?></p> <a href="javascript:;" class="alert-link text-white text-center d-flex" type="email"><?php echo $value['user_email'] ?></a><p><?php echo $value['user_message'] ?></p></span>
-                <input type="button" class="btn-right text-sm bg-dark rounded-3 text-white" data-bs-dismiss="alert" value="Delete">
+                <span  style="margin-right:8vw"><p  class="text-left text-bolder" class="text-left" ><?php echo "@".($value['submit_time'])." <hr>" ?></p> <a href="javascript:;" class="alert-link text-white text-center d-flex" type="email"><?php echo $value['user_email'] ?></a><p><?php echo $value['user_message'] ?></p></span>
+                <input type="button" name= "<?php echo ($value['user_name']) ?>" class="btn-right text-sm bg-dark rounded-3 text-white" data-bs-dismiss="alert" value="Delete">
             
-                <input type="button" class="btn-right bg-danger text-sm  rounded-3 text-white " value="Respond">
+                <input type="button" class="btn-right bg-gradient-danger text-sm  rounded-3 text-white " value="Respond">
                 
               </div>
               <!-- PHP Loop Ends Here -->

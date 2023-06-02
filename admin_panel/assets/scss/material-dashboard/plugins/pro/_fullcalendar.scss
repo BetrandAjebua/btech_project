@@ -199,10 +199,10 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc {
 
-  /* "primary" coloring */
+  /* "danger" coloring */
 
 }
-.fc .fc-button-primary {
+.fc .fc-button-danger {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #2C3E50;
@@ -210,7 +210,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-color: #2C3E50;
     border-color: var(--fc-button-border-color, #2C3E50);
   }
-.fc .fc-button-primary:hover {
+.fc .fc-button-danger:hover {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #1e2b37;
@@ -218,7 +218,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-color: #1a252f;
     border-color: var(--fc-button-hover-border-color, #1a252f);
   }
-.fc .fc-button-primary:disabled { /* not DRY */
+.fc .fc-button-danger:disabled { /* not DRY */
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #2C3E50;
@@ -226,11 +226,11 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-color: #2C3E50;
     border-color: var(--fc-button-border-color, #2C3E50); /* overrides :hover */
   }
-.fc .fc-button-primary:focus {
+.fc .fc-button-danger:focus {
     box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
   }
-.fc .fc-button-primary:not(:disabled):active,
-  .fc .fc-button-primary:not(:disabled).fc-button-active {
+.fc .fc-button-danger:not(:disabled):active,
+  .fc .fc-button-danger:not(:disabled).fc-button-active {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
     background-color: #1a252f;
@@ -238,8 +238,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-color: #151e27;
     border-color: var(--fc-button-active-border-color, #151e27);
   }
-.fc .fc-button-primary:not(:disabled):active:focus,
-  .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
+.fc .fc-button-danger:not(:disabled):active:focus,
+  .fc .fc-button-danger:not(:disabled).fc-button-active:focus {
     box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
   }
 .fc {
