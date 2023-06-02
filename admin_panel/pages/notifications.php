@@ -135,39 +135,37 @@
               <h5 class="mb-0">Messages</h5>
             </div>
 
-            <!-- Getting Notification data From the Data Base -->
+            <div class="card-body p-3 pb-0">
+
+<!-- Getting Notification data From the Data Base -->
             <?php 
             $query = $db->prepare("SELECT * FROM contact_us");
             $query->execute();
-            $length=$query->fetchAll(PDO::FETCH_OBJ);
+            $length=$query->fetchAll(PDO::FETCH_ASSOC);
             $count1=0;
 
-            for($count1 = 0; $length->rowCount() <= $count1;$count1=+2){
-              echo ($length['user_name'][i]);
-            }
-            
+// PHP LOOP STARTS
+           foreach ($length as $key => $value) {
+           
+                    
             ?>
-            <div class="card-body p-3 pb-0">
-              <div class=" alert alert-danger alert-dismissible text-white pl-2" role="alert">
-                <span class="text-sm " style="margin-right:2vw">A simple primary alert with <a href="javascript:;" class="alert-link text-white" type="email">an example link</a>. Give it a click if you like</span>
+
+              <div class=" alert alert-dark alert-dismissible text-white pl-2 text-sm " role="alert">
+                <span  style="margin-right:8vw"><p style="visibility:none" class="text-left text-bolder" class="text-left" ><?php echo "@".($value['submit_time'])." <hr>" ?></p> <a href="javascript:;" class="alert-link text-white text-center d-flex" type="email"><?php echo $value['user_email'] ?></a><p><?php echo $value['user_message'] ?></p></span>
                 <input type="button" class="btn-right text-sm bg-dark rounded-3 text-white" data-bs-dismiss="alert" value="Delete">
-            
-                <input type="button" class="btn-right bg-dark text-sm  rounded-3 text-white " value="Respond">
-                
-              </div>
-              <div class=" alert alert-dark alert-dismissible text-white pl-2" role="alert">
-                <span class="text-sm " style="margin-right:2vw">Name: <a href="javascript:;" class="alert-link text-white">Email:</a>message</span>
-                <input type="button" class="btn-right text-sm bg-danger rounded-3 text-white" data-bs-dismiss="alert" value="Delete">
             
                 <input type="button" class="btn-right bg-danger text-sm  rounded-3 text-white " value="Respond">
                 
               </div>
+              <!-- PHP Loop Ends Here -->
+              <?php   }?>  
           </div>
+            
           <div class="card mt-4">
             <div class="card-header p-3">
               <h5 class="mb-0">Notifications</h5>
               <p class="text-sm mb-0">
-                Notifications on this page can be sent by any Visitor of the page 
+                This notifications are messages sent from the general public to either provide  or request for information
               </p>
             </div>
             <div class="card-body p-3">
