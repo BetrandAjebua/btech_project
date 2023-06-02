@@ -10,11 +10,11 @@
               #livesavers
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
             </ul>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-4">
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
                   <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>

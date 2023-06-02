@@ -50,7 +50,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/notifications.html">
+                <a class="nav-link text-white <?php if($_SERVER['REQUEST_URI']=='/admin_panel/pages/notifications.php')
+  {echo('active bg-gradient-danger'); }  else{echo("inactive");}   ?>" href="/admin_panel/pages/notifications.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     </div>
                     <span class="nav-link-text ms-1">Notifications</span>
