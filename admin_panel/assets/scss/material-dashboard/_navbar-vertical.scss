@@ -128,8 +128,8 @@
 
           .lavalamp-object {
             width: calc(100% - 1rem) !important;
-            background: theme-color("primary");
-            color: color-yiq($primary);
+            background: theme-color("danger");
+            color: color-yiq($danger);
             margin-right: 0.5rem;
             margin-left: 0.5rem;
             padding-left: 1rem;

@@ -61,7 +61,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link me-2" href="../pages/sign-in.html">
+                  <a class="nav-link me-2" href="../pages/sign-in.php">
                     <i class="fas fa-key opacity-6 text-dark me-1"></i>
                     Sign In
                   </a>
@@ -84,7 +84,7 @@
         <div class="container">
           <div class="row">
             <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-danger h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../assets/img/illustrations/illustration-signup.jpg'); background-size: cover;">
+              <div class="position-relative bg-gradient-danger h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background: red url('../assets/img/illustrations/illustration-signup.jpg'); background-size: cover;">
               </div>
             </div>
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">
@@ -121,7 +121,7 @@
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-2 text-sm mx-auto">
                     Already have an account?
-                    <a href="../pages/sign-in.html" class="text-danger text-gradient font-weight-bold">Sign in</a>
+                    <a href="../pages/sign-in.php" class="text-danger text-gradient font-weight-bold">Sign in</a>
                   </p>
                 </div>
               </div>

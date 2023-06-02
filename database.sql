@@ -155,25 +155,25 @@ INSERT INTO `patient` (`p_id`, `p_name`, `p_password`, `p_age`, `p_phone`, `p_di
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`admin_id`);
+  ADD danger KEY (`admin_id`);
 
 --
 -- Indexes for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  ADD PRIMARY KEY (`user_id`);
+  ADD danger KEY (`user_id`);
 
 --
 -- Indexes for table `donor`
 --
 ALTER TABLE `donor`
-  ADD PRIMARY KEY (`d_id`);
+  ADD danger KEY (`d_id`);
 
 --
 -- Indexes for table `patient`
 --
 ALTER TABLE `patient`
-  ADD PRIMARY KEY (`p_id`);
+  ADD danger KEY (`p_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables

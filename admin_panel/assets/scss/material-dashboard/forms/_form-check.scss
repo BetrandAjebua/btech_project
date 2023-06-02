@@ -9,7 +9,7 @@
     position: relative;
 
     &:checked {
-      border-color: $primary;
+      border-color: $danger;
     }
   }
 
@@ -31,7 +31,7 @@
     }
 
     &:checked{
-      background: $primary;
+      background: $danger;
       &:after {
         opacity: 1;
       }

@@ -54,7 +54,7 @@ $colors: (
 ) !default;
 // scss-docs-end colors-map
 
-$primary:       #e91e63 !default;
+$danger:       #e91e63 !default;
 $secondary:     #7b809a !default;
 $info:          #1A73E8 !default;
 $success:       #4CAF50 !default;
@@ -65,7 +65,7 @@ $dark:          $h-color !default;
 
 // scss-docs-start theme-colors-map
 $theme-colors: (
-  "primary":    $primary,
+  "danger":    $danger,
   "secondary":  $secondary,
   "success":    $success,
   "info":       $info,
@@ -79,8 +79,8 @@ $theme-colors: (
 
 
 // Gradient colors
-$primary-gradient:            #EC407A !default;
-$primary-gradient-state:      #D81B60 !default;
+$danger-gradient:            #EC407A !default;
+$danger-gradient-state:      #D81B60 !default;
 
 $secondary-gradient:          #747b8a !default;
 $secondary-gradient-state:    #495361 !default;
@@ -108,7 +108,7 @@ $dark-gradient-state-dark:    #1a2035 !default;
 
 // Gradient Colors map
 $theme-gradient-colors: (
-  "primary":    ($primary-gradient, $primary-gradient-state),
+  "danger":    ($danger-gradient, $danger-gradient-state),
   "secondary":  ($secondary-gradient, $secondary-gradient-state),
   "success":    ($success-gradient, $success-gradient-state),
   "info":       ($info-gradient, $info-gradient-state),
@@ -323,7 +323,7 @@ $body-text-align:           null !default;
 //
 // Style anchor elements.
 
-$link-color:                              $primary !default;
+$link-color:                              $danger !default;
 $link-decoration:                         none !default;
 $link-hover-color:                        $link-color !default;
 $link-hover-decoration:                   none !default;
@@ -427,7 +427,7 @@ $box-shadow-inset:            inset 0 1px 2px rgba($black, .075) !default;
 
 // colored Shadows
 
-$box-shadow-primary:          0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(233, 30, 99, .4) !default;
+$box-shadow-danger:          0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(233, 30, 99, .4) !default;
 $box-shadow-secondary:        0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(210, 210, 210, .4) !default;
 $box-shadow-info:             0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(0, 188, 212, .4) !default;
 $box-shadow-warning:          0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(255, 152, 0, .4) !default;
@@ -437,7 +437,7 @@ $box-shadow-dark:             0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px r
 $box-shadow-light:            0 4px 20px 0 rgba(0, 0, 0, .14), 0 7px 10px -5px rgba(233, 30, 99, .4) !default;
 
 $component-active-color:      $white !default;
-$component-active-bg:         $primary !default;
+$component-active-bg:         $danger !default;
 
 $caret-width:                 .3em !default;
 $caret-vertical-align:        $caret-width * .85 !default;
@@ -575,11 +575,11 @@ $text-gradient-bg-clip:       text !default;
 $text-gradient-text-fill:     transparent !default;
 $text-gradient-position:      relative !default;
 $text-gradient-zindex:        1 !default;
-$text-gradient-bg-primary:    linear-gradient(195deg, $primary-gradient, $primary-gradient-state) !default;
+$text-gradient-bg-gradient-danger:    linear-gradient(195deg, $danger-gradient, $danger-gradient-state) !default;
 $text-gradient-bg-info:       linear-gradient(195deg, $info-gradient, $info-gradient-state) !default;
 $text-gradient-bg-success:    linear-gradient(195deg, $success-gradient, $success-gradient-state) !default;
 $text-gradient-bg-warning:    linear-gradient(195deg, $warning-gradient, $warning-gradient-state) !default;
-$text-gradient-bg-danger:     linear-gradient(195deg, $danger-gradient, $danger-gradient-state) !default;
+$text-gradient-bg-gradient-danger:     linear-gradient(195deg, $danger-gradient, $danger-gradient-state) !default;
 $text-gradient-bg-dark:       linear-gradient(195deg, $dark-gradient, $dark-gradient-state) !default;
 
 $initialism-font-size:        $small-font-size !default;
@@ -672,7 +672,7 @@ $table-bg-scale:              -80% !default;
 
 
 $table-variants: (
-  "primary":    shift-color($primary, $table-bg-scale),
+  "danger":    shift-color($danger, $table-bg-scale),
   "secondary":  shift-color($secondary, $table-bg-scale),
   "success":    shift-color($success, $table-bg-scale),
   "info":       shift-color($info, $table-bg-scale),
@@ -802,7 +802,7 @@ $btn-material-icon-top:           0 !default;
 // we've overwritten the default Bootstrap function
 // for dynamically adding font color since the colors
 // added by that function were not correctly set
-$btn-primary-font-color:      $white !default;
+$btn-danger-font-color:      $white !default;
 $btn-secondary-font-color:    $white !default;
 $btn-danger-font-color:       $white !default;
 $btn-info-font-color:         $white !default;
@@ -815,7 +815,7 @@ $btn-font-colors: () !default;
 
 $btn-font-colors: map-merge(
   (
-    "primary":       $btn-primary-font-color,
+    "danger":       $btn-danger-font-color,
     "secondary":     $btn-secondary-font-color,
     "danger":        $btn-danger-font-color,
     "info":          $btn-info-font-color,
@@ -915,10 +915,10 @@ $input-transition:                      .2s ease !default;
 $input-background:                       no-repeat bottom,50% calc(100% - 1px);
 $input-background-size:                  0 100%,100% 100%;
 $input-background-size-focus:            100% 100%,100% 100%;
-$input-background-image:                 linear-gradient(0deg,$primary 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0);
+$input-background-image:                 linear-gradient(0deg,$danger 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0);
 $input-background-image-valid:           linear-gradient(0deg,$success 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0);
 $input-background-image-invalid:         linear-gradient(0deg,$danger 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,#d2d2d2 1px,hsla(0,0%,82%,0) 0);
-$input-background-image-disabled:        linear-gradient(0deg,$primary 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,$gray-200 1px,hsla(0,0%,82%,0) 0);
+$input-background-image-disabled:        linear-gradient(0deg,$danger 2px,rgba(156,39,176,0) 0),linear-gradient(0deg,$gray-200 1px,hsla(0,0%,82%,0) 0);
 
 $form-check-input-width:                  1.23em !default;
 $form-check-min-height:                   auto !default;
@@ -941,7 +941,7 @@ $form-check-input-focus-box-shadow:       none !default;
 $form-check-input-checked-color:          $white !default;
 $form-check-input-checked-bg-color:       transparent !default;
 $form-check-input-checked-border-color:   $form-check-input-checked-bg-color !default;
-$form-check-input-checked-bg-image:       linear-gradient(195deg, $primary-gradient 0%, $primary-gradient-state 100%) !default;
+$form-check-input-checked-bg-image:       linear-gradient(195deg, $danger-gradient 0%, $danger-gradient-state 100%) !default;
 $form-check-radio-checked-bg-image:       $form-check-input-checked-bg-image !default;
 $form-check-radio-after-width:            .8375rem !default;
 $form-check-radio-after-shadow:           0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06), 0 0 0 12px rgba(53, 71, 102, .1) !default;
@@ -1497,7 +1497,7 @@ $progress-bg:                       $gray-200 !default;
 $progress-border-radius:            $border-radius-sm !default;
 $progress-box-shadow:               $box-shadow-inset !default;
 $progress-bar-color:                $white !default;
-$progress-bar-bg:                   $primary !default;
+$progress-bar-bg:                   $danger !default;
 $progress-bar-animation-timing:     1s linear infinite !default;
 $progress-bar-transition:           width .6s ease !default;
 

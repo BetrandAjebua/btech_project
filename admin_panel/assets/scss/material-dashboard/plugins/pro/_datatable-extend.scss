@@ -87,13 +87,13 @@ Github: https://github.com/fiduswriter/Simple-DataTables
 				.active{
 					a{
 						background: transparent;
-						@include gradient-directional(nth($primary-gradient, 1) 0%, nth($primary-gradient-state, -1) 100%, $deg: 195deg);
+						@include gradient-directional(nth($danger-gradient, 1) 0%, nth($danger-gradient-state, -1) 100%, $deg: 195deg);
 						box-shadow: $pagination-active-box-shadow;
 						color: $white;
 						border: none;
 						border-radius: $page-link-radius !important;
 						&:hover{
-							@include gradient-directional(nth($primary-gradient, 1) 0%, nth($primary-gradient-state, -1) 100%, $deg: 195deg);
+							@include gradient-directional(nth($danger-gradient, 1) 0%, nth($danger-gradient-state, -1) 100%, $deg: 195deg);
 						}
 					}
 				}

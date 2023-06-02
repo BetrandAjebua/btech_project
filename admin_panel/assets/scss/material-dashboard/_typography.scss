@@ -191,8 +191,8 @@ p {
   position: $text-gradient-position;
   z-index: $text-gradient-zindex;
 
-  &.text-primary {
-    background-image: $text-gradient-bg-primary;
+  &.text-danger {
+    background-image: $text-gradient-bg-gradient-danger;
   }
   &.text-info {
     background-image: $text-gradient-bg-info;
@@ -204,7 +204,7 @@ p {
     background-image: $text-gradient-bg-warning;
   }
   &.text-danger {
-    background-image: $text-gradient-bg-danger;
+    background-image: $text-gradient-bg-gradient-danger;
   }
   &.text-dark {
     background-image: $text-gradient-bg-dark;

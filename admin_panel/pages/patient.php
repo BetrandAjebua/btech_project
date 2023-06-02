@@ -23,14 +23,14 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Page</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Donors</li>
+            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Patients</li>
           </ol>
           <h6 class="font-weight-bolder mb-0"></h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             <div class="input-group input-group-outline">
-              <label class="form-label ">Type Donor location here...</label>
+              <label class="form-label ">Type Patient location here...</label>
               <input type="text" class="form-control">
               <input class="rounded-2 text-white bg-gradient-danger" type="button" value="search">
             </div>
@@ -49,7 +49,7 @@
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Donor-Request</h6>
+                <h6 class="text-white text-capitalize ps-3">Blood Request</h6>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -57,10 +57,14 @@
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Budget</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Completion</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Patient Name</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Email</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Number</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Location</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Blood Group</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Disease</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Quantity</th>
+
                       <th></th>
                     </tr>
                   </thead>
@@ -114,7 +118,7 @@
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Registered Donors</h6>
+                <h6 class="text-white text-capitalize ps-3">Completed Blood Transaction</h6>
               </div>
             </div>
             <div class="card-body px-0 pb-2">

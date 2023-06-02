@@ -834,7 +834,7 @@ span.flatpickr-weekday {
     &.selected,
     &.startRange,
     &.endRange {
-      background: $primary !important;
+      background: $danger !important;
       color: $white;
       border: none;
     }
@@ -872,7 +872,7 @@ span.flatpickr-weekday {
 .flatpickr-day.endRange.startRange+.endRange:not(:nth-child(7n+1)),
 .flatpickr-day.selected.startRange+.endRange:not(:nth-child(7n+1)),
 .flatpickr-day.startRange.startRange+.endRange:not(:nth-child(7n+1)){
-  box-shadow: -10px 0 0 $primary;
+  box-shadow: -10px 0 0 $danger;
 }
 
 ////////////

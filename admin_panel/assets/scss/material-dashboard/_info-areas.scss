@@ -120,12 +120,12 @@
 
 // Icon SVG fill color change
 
-svg.text-primary {
+svg.text-danger {
   .color-foreground {
-    fill: $primary-gradient;
+    fill: $danger-gradient;
   }
   .color-background {
-    fill: $primary-gradient-state;
+    fill: $danger-gradient-state;
   }
 }
 svg.text-secondary {

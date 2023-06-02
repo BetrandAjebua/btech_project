@@ -190,28 +190,28 @@
               <div class="progress ">
                 <span class="skill ">A<i class="val">40%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress ">
                 <span class="skill ">B <i class="val">20%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress ">
                 <span class="skill ">AB<i class="val">15%</i></span>
                 <div class="progress-bar-wrap ">
-                  <div class="progress-bar bg-danger " role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-gradient-danger " role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 
               <div class="progress ">
                 <span class="skill ">O<i class="val">10%</i></span>
                 <div class="progress-bar-wrap">
-                  <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
               </div>
 

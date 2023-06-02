@@ -1,17 +1,4 @@
-<!--
-=========================================================
-* Material Dashboard 2 - v3.0.0
-=========================================================
 
-* Product Page: https://www.creative-tim.com/product/material-dashboard
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -140,7 +127,7 @@
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?
-                    <a href="../pages/sign-up.html" class="text-danger text-gradient font-weight-bold">Sign up</a>
+                    <a href="../pages/sign-up.php" class="text-danger text-gradient font-weight-bold">Sign up</a>
                   </p>
                 </form>
               </div>
