@@ -10,7 +10,7 @@ if(!empty($_POST)){
             $query= $db->prepare("SELECT * FROM  admin WHERE a_name='$dname' AND a_password='$password'");
                 $query->execute();
                if($query->rowCount()>0){
-                header("Location: ../index.php");
+                header("Location: ../admin_panel/index.php");
                }
         }
     
@@ -20,3 +20,4 @@ if(!empty($_POST)){
     }
 }
 ?>
+<a href=""></a>

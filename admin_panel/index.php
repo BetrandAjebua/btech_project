@@ -130,7 +130,7 @@
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">
-        <div class="col-xl-4 col-sm-4 mb-xl-0 mb-4">
+        <div class="col-xl-3 col-sm-4 mb-xl-0 mb-4">
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-white shadow-dark text-center border-radius-xl mt-n4 position-absolute p-n5 bg-gradient-dark pt-3 font-weight-bolder">
@@ -147,14 +147,14 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-2 col-sm-4 mb-xl-0 mb-3">
+        <div class="col-xl-2 col-sm-5 mb-xl-0 mb-3">
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-danger shadow-dark text-center border-radius-xl mt-n4 position-absolute">
                 <i class="material-icons opacity-10">A</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Demand: <span>high</span></p>
+                <p class="text-sm mb-0 text-capitalize">Quantity</p>
                 <h4 class="mb-0">55</h4>
               </div>
             </div>
@@ -171,7 +171,7 @@
                 <i class="material-icons opacity-10">B</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Demand: <span>Low</span></p>
+                <p class="text-sm mb-0 text-capitalize">Quantity</p>
                 <h4 class="mb-0">60</h4>
               </div>
             </div>
@@ -188,7 +188,7 @@
                 <i class="material-icons opacity-10">AB</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Demand: <span>Medium</span></p>
+                <p class="text-sm mb-0 text-capitalize">Quantity</p>
                 <h4 class="mb-0">20</h4>
               </div>
             </div>
@@ -205,7 +205,7 @@
                 <i class="material-icons opacity-10">O</i>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Demand: <span>Low</span></p>
+                <p class="text-sm mb-0 text-capitalize">Quantity</p>
                 <h4 class="mb-0">67</h4>
               </div>
             </div>

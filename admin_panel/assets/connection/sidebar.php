@@ -84,25 +84,25 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/notifications.php') {
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-in.php') {
                                                     echo ('active bg-gradient-danger');
                                                 } else {
                                                     echo ("inactive");
                                                 }   ?> " href="/admin_panel/pages/sign-in.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">login</i>
+                        <i class="material-icons opacity-10 ">@</i>
                     </div>
                     <span class="nav-link-text ms-1">Sign In</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/notifications.php') {
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-up.php') {
                                                     echo ('active bg-gradient-danger');
                                                 } else {
                                                     echo ("inactive");
                                                 }   ?> " href="/admin_panel/pages/sign-up.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">assignment</i>
+                        <i class="material-icons opacity-10">&</i>
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
