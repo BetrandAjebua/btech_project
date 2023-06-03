@@ -157,6 +157,26 @@ CREATE TABLE `patient` (
 
 --
 -- Dumping data for table `patient`
+
+
+
+-- Table structure for table `patient`
+--
+
+CREATE TABLE `patient_request` (
+  `pr_id` int(11) NOT NULL,
+  `pr_name` varchar(255) NOT NULL,
+  `pr_password` varchar(255) NOT NULL,
+  `pr_age` int(120) NOT NULL,
+  `pr_phone` varchar(16) NOT NULL,
+  `pr_disease` varchar(255) NOT NULL,
+  `pr_blood_group` text NOT NULL,
+  `pr_gender` text NOT NULL,
+  `pr_email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `patient`
 --
 
 INSERT INTO `patient` (`p_id`, `p_name`, `p_password`, `p_age`, `p_phone`, `p_disease`, `p_blood_group`, `p_gender`, `email`) VALUES
