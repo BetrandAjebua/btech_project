@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2023 at 04:17 PM
+-- Generation Time: Jun 03, 2023 at 08:10 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -101,25 +101,6 @@ CREATE TABLE `donor` (
   `d_age` int(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
-CREATE TABLE `donor_request` (
-  `dr_id` int(11) NOT NULL,
-  `dr_name` varchar(255) NOT NULL,
-  `dr_password` varchar(256) NOT NULL,
-  `dr_email` varchar(255) NOT NULL,
-  `dr_number` int(15) NOT NULL,
-  `dr_city` varchar(255) NOT NULL,
-  `dr_home_address` varchar(255) NOT NULL,
-  `dr_blood_group` text NOT NULL,
-  `dr_mstatus` text NOT NULL,
-  `dr_guadian_name` varchar(255) NOT NULL,
-  `dr_guadian_number` int(15) NOT NULL,
-  `dr_guadian_home_address` varchar(255) NOT NULL,
-  `dr_age` int(120) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
-
-
 --
 -- Dumping data for table `donor`
 --
@@ -140,6 +121,38 @@ INSERT INTO `donor` (`d_id`, `d_name`, `d_password`, `d_email`, `d_number`, `d_c
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `donor_request`
+--
+
+CREATE TABLE `donor_request` (
+  `dr_id` int(11) NOT NULL,
+  `dr_name` varchar(255) NOT NULL,
+  `dr_pass` int(11) NOT NULL,
+  `dr_age` int(11) NOT NULL,
+  `dr_email` varchar(255) NOT NULL,
+  `dr_number` bigint(255) NOT NULL,
+  `dr_city` varchar(60) NOT NULL,
+  `dr_home_address` varchar(65) NOT NULL,
+  `dr_bgroup` text NOT NULL,
+  `dr_marital_status` varchar(20) NOT NULL,
+  `drg_name` varchar(255) NOT NULL,
+  `drg_number` bigint(20) NOT NULL,
+  `drg_address` varchar(255) NOT NULL,
+  `dr_time` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `donor_request`
+--
+
+INSERT INTO `donor_request` (`dr_id`, `dr_name`, `dr_pass`, `dr_age`, `dr_email`, `dr_number`, `dr_city`, `dr_home_address`, `dr_bgroup`, `dr_marital_status`, `drg_name`, `drg_number`, `drg_address`, `dr_time`) VALUES
+(1, 'Jones Wiker', 0, 34, 'joneswik@gmail.com', 67897634, 'Kumba', 'Fiango', 'B', 'Single', 'Loveline Jono', 656789746, 'Kosala', '2023-06-03 16:27:01'),
+(2, 'Jon Demaze', 0, 56, 'lonjon@gmail.com', 687546445, 'Kambe', 'Fotu street 3', 'O', 'Maried', 'Lopetu Fang', 678476454, 'Betilo-Door', '2023-06-03 16:31:20'),
+(3, 'Ekpe Jornal', 0, 56, 'ekpe@gmail.com', 66754456, 'Kambe', 'Mayor street 3', 'AB', 'Single', 'Jenifer Sinfoh', 6789054434, 'kietilo street', '2023-06-03 16:32:53');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `patient`
 --
 
@@ -152,15 +165,25 @@ CREATE TABLE `patient` (
   `p_disease` varchar(255) NOT NULL,
   `p_blood_group` text NOT NULL,
   `p_gender` text NOT NULL,
-  `email` varchar(255) NOT NULL
+  `email` varchar(255) NOT NULL,
+  `req_time` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `patient`
+--
 
+INSERT INTO `patient` (`p_id`, `p_name`, `p_password`, `p_age`, `p_phone`, `p_disease`, `p_blood_group`, `p_gender`, `email`, `req_time`) VALUES
+(5, 'vcvc', '$2y$10$9SC0s0ihTNjX65YuT3a/i.6ob.VfzDQkKH5wvCJUTJGfu4OOHRlwq', 43, '6463', 'bgsdgsg', 'A ', 'Maried', 'gh@fr.r', '2023-06-03'),
+(6, 'ffd', '$2y$10$r38s7oj9SLY/6fAZsh2OdOYAgwmrqiF5vr9BOZ./9xH.Iy.DfPSc6', 45, '3452523', 'sczxvxc', 'AB ', 'Maried', 'admin@g.g', '2023-06-03'),
+(7, 'Wilson', '$2y$10$guajwr5.ILHO22KdxtXkG.gxzt.oQr0I5WuaDhwB/uPlunUbkVfQK', 56, '678956467', 'Aneamia', 'B ', 'Maried', 'willy@gmail.com', '2023-06-03'),
+(8, 'Johny', '$2y$10$y5jbuk8tyOJDIl5Nzv14WuhONfoxxZOSnGwycMLikNaYT73tagvj.', 56, '24435', 'Blood cancer', 'AB ', 'Single', 'Johny@l.con', '2023-06-03'),
+(9, 'Joseph', '$2y$10$Y3xYN0dZwOBfmQS4h/Lt3uSOR7bPG5dyIRHCMqI7YUt6SxDCi0nji', 45, '241343', 'Cancer', 'B ', 'Single', 'jo@gmail.com', '2023-06-03');
 
+-- --------------------------------------------------------
 
--- Table structure for table `patient`
+--
+-- Table structure for table `patient_request`
 --
 
 CREATE TABLE `patient_request` (
@@ -176,17 +199,6 @@ CREATE TABLE `patient_request` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `patient`
---
-
-INSERT INTO `patient` (`p_id`, `p_name`, `p_password`, `p_age`, `p_phone`, `p_disease`, `p_blood_group`, `p_gender`, `email`) VALUES
-(5, 'vcvc', '$2y$10$9SC0s0ihTNjX65YuT3a/i.6ob.VfzDQkKH5wvCJUTJGfu4OOHRlwq', 43, '6463', 'bgsdgsg', 'A ', 'Maried', 'gh@fr.r'),
-(6, 'ffd', '$2y$10$r38s7oj9SLY/6fAZsh2OdOYAgwmrqiF5vr9BOZ./9xH.Iy.DfPSc6', 45, '3452523', 'sczxvxc', 'AB ', 'Maried', 'admin@g.g'),
-(7, 'Wilson', '$2y$10$guajwr5.ILHO22KdxtXkG.gxzt.oQr0I5WuaDhwB/uPlunUbkVfQK', 56, '678956467', 'Aneamia', 'B ', 'Maried', 'willy@gmail.com'),
-(8, 'Johny', '$2y$10$y5jbuk8tyOJDIl5Nzv14WuhONfoxxZOSnGwycMLikNaYT73tagvj.', 56, '24435', 'Blood cancer', 'AB ', 'Single', 'Johny@l.con'),
-(9, 'Joseph', '$2y$10$Y3xYN0dZwOBfmQS4h/Lt3uSOR7bPG5dyIRHCMqI7YUt6SxDCi0nji', 45, '241343', 'Cancer', 'B ', 'Single', 'jo@gmail.com');
-
---
 -- Indexes for dumped tables
 --
 
@@ -194,28 +206,31 @@ INSERT INTO `patient` (`p_id`, `p_name`, `p_password`, `p_age`, `p_phone`, `p_di
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD danger KEY (`admin_id`);
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  ADD danger KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `donor`
 --
 ALTER TABLE `donor`
-  ADD danger KEY (`d_id`);
+  ADD PRIMARY KEY (`d_id`);
 
-  ALTER TABLE `donor_request`
-  ADD danger KEY (`dr_id`);
+--
+-- Indexes for table `donor_request`
+--
+ALTER TABLE `donor_request`
+  ADD PRIMARY KEY (`dr_id`);
 
 --
 -- Indexes for table `patient`
 --
 ALTER TABLE `patient`
-  ADD danger KEY (`p_id`);
+  ADD PRIMARY KEY (`p_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -238,6 +253,12 @@ ALTER TABLE `contact_us`
 --
 ALTER TABLE `donor`
   MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `donor_request`
+--
+ALTER TABLE `donor_request`
+  MODIFY `dr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `patient`
