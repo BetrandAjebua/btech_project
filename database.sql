@@ -101,6 +101,25 @@ CREATE TABLE `donor` (
   `d_age` int(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+CREATE TABLE `donor_request` (
+  `dr_id` int(11) NOT NULL,
+  `dr_name` varchar(255) NOT NULL,
+  `dr_password` varchar(256) NOT NULL,
+  `dr_email` varchar(255) NOT NULL,
+  `dr_number` int(15) NOT NULL,
+  `dr_city` varchar(255) NOT NULL,
+  `dr_home_address` varchar(255) NOT NULL,
+  `dr_blood_group` text NOT NULL,
+  `dr_mstatus` text NOT NULL,
+  `dr_guadian_name` varchar(255) NOT NULL,
+  `dr_guadian_number` int(15) NOT NULL,
+  `dr_guadian_home_address` varchar(255) NOT NULL,
+  `dr_age` int(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
 --
 -- Dumping data for table `donor`
 --
@@ -168,6 +187,9 @@ ALTER TABLE `contact_us`
 --
 ALTER TABLE `donor`
   ADD danger KEY (`d_id`);
+
+  ALTER TABLE `donor_request`
+  ADD danger KEY (`dr_id`);
 
 --
 -- Indexes for table `patient`
