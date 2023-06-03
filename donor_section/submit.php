@@ -16,8 +16,8 @@ try{
         $phaddress = htmlentities($_POST["ph-address"]);
 
         if($dname!=""){
-            $query= $db->prepare("INSERT INTO donor_request (dr_name, dr_password	,dr_email, dr_number,	dr_city,	dr_home_address,
-        	dr_blood_group, dr_mstatus, dr_guadian_name, dr_guadian_number, dr_guadian_home_address, dr_age	) VALUES
+            $query= $db->prepare("INSERT INTO donor_request (dr_name, dr_pass	,dr_email, dr_number,	dr_city,	dr_home_address,
+        	dr_bgroup, dr_marital_status, drg_name, drg_number, drg_address, dr_age) VALUES
              ('$dname','$password', '$demail','$tel', '$city', '$haddress', '$bgroup','$mstatus','$pname', '$pnumber', '$phaddress', '$age')");
             $exe = $query->execute();
         }
