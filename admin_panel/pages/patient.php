@@ -32,7 +32,7 @@
             <div class="input-group input-group-outline">
               <label class="form-label ">Type Patient location here...</label>
               <input type="text" class="form-control">
-              <input class="rounded-2 text-white bg-gradient-danger" type="button" value="search">
+              <input class="rounded-2 text-white btn-danger" type="button" value="search">
             </div>
           </div>
                
@@ -60,7 +60,7 @@
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Address</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Blood Group</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Marital Status</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gender</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Age</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Action</th>
 
@@ -70,7 +70,7 @@
                   <tbody>
 
                     <?php
-                    $query1 = $db->prepare("SELECT * FROM donor_request");
+                    $query1 = $db->prepare("SELECT * FROM patient_request");
                     $query1->execute();
 
                     foreach ($query1->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
@@ -85,28 +85,27 @@
                         <img src="../assets/img/icons/patient/blood_req.jpg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
                       </div>
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm"><?php echo ($value->dr_name);   ?></h6>
-                              <p class="text-xs text-secondary mb-0"><?php echo ($value->dr_email);   ?></p>
+                              <h6 class="mb-0 text-sm"><?php echo ($value->pr_name);   ?></h6>
+                              <p class="text-xs text-secondary mb-0"><?php echo ($value->pr_email);   ?></p>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="text-xs font-weight-bold mb-0"><?php echo ($value->dr_home_address);   ?></p>
-                          <p class="text-xs text-secondary mb-0"><?php echo ($value->dr_city);   ?></p>
+                          <p class="text-xs font-weight-bold mb-0"><?php echo ($value->pr_phone);   ?></p>
                         </td>
                         <td class="align-middle text-center text-sm">
-                          <span class="badge badge-sm bg-gradient-dark"><?php echo ($value->dr_bgroup);   ?></span>
+                          <span class="badge badge-sm bg-gradient-dark"><?php echo ($value->pr_blood_group);   ?></span>
                         </td>
                         <td class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold"><?php echo ($value->dr_marital_status);   ?></span>
+                          <span class="text-secondary text-xs font-weight-bold"><?php echo ($value->pr_gender);   ?></span>
                         </td>
                         <td class="align-middle">
-                          <span class="text-secondary text-xs font-weight-bold"><?php echo ($value->dr_age) . "yrs";   ?></span>
+                          <span class="text-secondary text-xs font-weight-bold"><?php echo ($value->pr_age) . "yrs";   ?></span>
                           </a>
                         </td>
                         <td class="align-middle">
-                        <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Confirm</button>
-                          <button class="btn btn-sm-1 btn-danger text-white text-capitalize " data-bs-dismiss="alert">Reject</button>
+                        <button  class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Confirm</button>
+                          <button onclick="deletereq(<?php  echo $value->pr_id ?>)" class="btn btn-sm-1 btn-danger text-white text-capitalize " >Reject</button>
                         
                         </td>
                       </tr>
@@ -120,14 +119,14 @@
         </div>
       </div>
 
-<!-- Registered Donnor Section -->
+<!-- Registered Patient Section -->
 
       <div class="row">
         <div class="col-12">
           <div class="card my-4">
             <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
               <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                <h6 class="text-white text-capitalize ps-3">Completed Blood Transaction</h6>
+                <h6 class="text-white text-capitalize ps-3">Registered Patients</h6>
               </div>
             </div>
             <div class="card-body px-0 pb-2">
@@ -136,10 +135,10 @@
                   <thead>
                   <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Address</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Blood Group</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Marital Status</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Age</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Phone</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Blood_Group</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Marital_Status</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Disease</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Action</th>
 
 
@@ -148,9 +147,9 @@
                   <tbody>
                    
 <?php   
-$query= $db->prepare("SELECT * FROM patient_request");
+$query= $db->prepare("SELECT * FROM patient");
+$query->execute();
 
-var_dump($query->fetchAll(PDO::FETCH_ASSOC));
 // $query->execute();
 
 foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
@@ -165,27 +164,27 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
                             <img src="../assets/img/icons/patient/reg_patient.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"><?php echo($value->d_name);   ?></h6>
-                            <p class="text-xs text-secondary mb-0"><?php echo($value->d_email);   ?></p>
+                            <h6 class="mb-0 text-sm"><?php echo($value->p_name);   ?></h6>
+                            <p class="text-xs text-secondary mb-0"><?php echo($value->email);   ?></p>
                           </div>
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0"><?php echo($value->d_home_address);   ?></p>
-                        <p class="text-xs text-secondary mb-0"><?php echo($value->d_city);   ?></p>
+                        <p class="text-xs font-weight-bold mb-0"><?php echo($value->p_phone);   ?></p>
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="badge badge-sm bg-gradient-dark"><?php echo($value->d_blood_group);   ?></span>
+                        <span class="badge badge-sm bg-gradient-dark"><?php echo($value->p_blood_group);   ?></span>
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?php echo($value->d_mstatus);   ?></span>
+                      <p class="text-xs text-secondary mb-0"><?php echo($value->p_gender);   ?></p>
+                        <span class="text-secondary text-xs font-weight-bold"><?php echo($value->p_age);   ?></span>
                       </td>
                       <td class="align-middle">
-                      <span class="text-secondary text-xs font-weight-bold"><?php echo($value->d_age)."yrs";   ?></span>
+                      <span class="text-secondary text-xs font-weight-bold"><?php echo($value->p_disease)."yrs";   ?></span>
                         </a>
                       </td>
                       <td class="align-middle">
-                      <button class="btn btn-sm-1 bg-gradient-danger text-white text-capitalize " data-bs-dismiss="alert" >Delete</button>
+                      <button class="btn btn-sm-1 btn-danger text-white text-capitalize " onclick="deletePatient(<?php echo $value->p_id  ?>)" >Delete</button>
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Update</button>
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
                       </td>
@@ -288,7 +287,44 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
         damping: '0.5'
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+
+
+
+
+      // 
     }
+    // Function to Delete Registered Patient
+    function deletePatient(value1) {
+  // Send an AJAX request to the PHP file that will delete the record
+  let xhr =  new XMLHttpRequest();
+  xhr.open("POST","action.php");
+  xhr.send(`del_id=${value1}`);
+  
+  
+  $.ajax({
+    url: "action.php",
+    type: "POST",
+    data: { del_id: value1 },
+    success: function() {
+      // Reload the page to show the updated data
+      location.reload();
+    }
+  });
+}
+
+  // Function to Delete  Patient Request
+  function deletereq(value2) {
+  // Send an AJAX request to the PHP file that will delete the record
+  $.ajax({
+    url: "action.php",
+    type: "POST",
+    data: { delreq_id: value2 },
+    success: function() {
+      // Reload the page to show the updated data
+      location.reload();
+    }
+  });
+}
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

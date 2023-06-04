@@ -89,8 +89,8 @@
   <div class="m-status">
       <label for="p_gender" class="l-input">Gender</label>
   <select id="b-select" name="p-gender">
-      <option class="bg-gradient-danger text-white" value="Maried">male</option>
-      <option class="bg-gradient-danger text-white" value="Single">female</option>
+      <option class="bg-gradient-danger text-white" value="Male">male</option>
+      <option class="bg-gradient-danger text-white" value="Female">female</option>
   </select>
   </div>
 

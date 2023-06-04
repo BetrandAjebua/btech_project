@@ -13,7 +13,7 @@ try{
         $pbg = htmlentities($_POST["p-bg"]);
 
 
-        $query= $db->prepare("INSERT INTO patient (p_name,	p_password,	p_age,	p_phone,	p_disease,	p_blood_group,	p_gender,	email) VALUES
+        $query= $db->prepare("INSERT INTO patient_request (pr_name,	pr_password,	pr_age,	pr_phone,	pr_disease,	pr_blood_group,	pr_gender,	pr_email) VALUES
              ('$dname','$password', '$age','$tel', '$pdisease', '$pbg ','$pgender', '$pemail')");
             $exe = $query->execute();                 
             if(!$exe){
