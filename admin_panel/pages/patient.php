@@ -280,52 +280,7 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-
-
-
-
-      // 
-    }
-    // Function to Delete Registered Patient
-    function deletePatient(value1) {
-  // Send an AJAX request to the PHP file that will delete the record
-  let xhr =  new XMLHttpRequest();
-  xhr.open("POST","action.php");
-  xhr.send(`del_id=${value1}`);
-  
-  
-  $.ajax({
-    url: "action.php",
-    type: "POST",
-    data: { del_id: value1 },
-    success: function() {
-      // Reload the page to show the updated data
-      location.reload();
-    }
-  });
-}
-
-  // Function to Delete  Patient Request
-  function deletereq(value2) {
-  // Send an AJAX request to the PHP file that will delete the record
-  $.ajax({
-    url: "action.php",
-    type: "POST",
-    data: { delreq_id: value2 },
-    success: function() {
-      // Reload the page to show the updated data
-      location.reload();
-    }
-  });
-}
-  </script>
+  <script src="actionfunction.js"> </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
