@@ -180,7 +180,7 @@
                           </a>
                         </td>
                         <td class="align-middle">
-                          <button class="btn btn-sm-1 btn-danger text-white text-capitalize " data-bs-dismiss="alert">Delete</button>
+                          <button class="btn btn-sm-1 btn-danger text-white text-capitalize " onclick="del_donor(<?php echo $value->d_id   ?>)">Delete</button>
                           <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Update</button>
                           <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
                         </td>
@@ -276,6 +276,7 @@
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="actionfunction.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
