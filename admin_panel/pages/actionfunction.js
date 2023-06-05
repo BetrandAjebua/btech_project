@@ -60,7 +60,6 @@ function del_donor(value3) {
 
 // Function to Delete  Donor Request
 function deld_req(value4) {
-    console.log("yes")
     // Send an AJAX request to the PHP file that will delete the record
     $.ajax({
     url: "action.php",
@@ -71,4 +70,22 @@ function deld_req(value4) {
       location.reload();
     }
     });
-    }    
+    }  
+    
+    
+
+    // Section for the confirmation of request
+
+
+    function confirm_donor_request(value5) {
+        // Send an AJAX request to the PHP file that will delete the record
+        $.ajax({
+        url: "action.php",
+        type: "POST",
+        data: { confdr_id: value5 , del_confdr_id: value5},
+        success: function() {
+          // Reload the page to show the updated data
+          location.reload();
+        }
+        });
+        }  
