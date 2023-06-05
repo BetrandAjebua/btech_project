@@ -14,7 +14,10 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="/assets/img/apple-touch-icon.png">
   <script src="../assets/connection/jquery.js"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <link id="pagestyle" href="<?php  if($_SERVER['REQUEST_URI']!=='/admin_panel/index.php')
   {echo('../assets/css/material-dashboard.css?v=3.0.0');}else{echo('./assets/css/material-dashboard.css?v=3.0.0');} ?>" rel="stylesheet" />
 

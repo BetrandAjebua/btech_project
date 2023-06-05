@@ -185,7 +185,7 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
                       </td>
                       <td class="align-middle">
                       <button class="btn btn-sm-1 btn-danger text-white text-capitalize " onclick="deletePatient(<?php echo $value->p_id  ?>)" >Delete</button>
-                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Update</button>
+                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize " data-toggle="modal" data-target="#updateData">Update</button>
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
                       </td>
                     </tr>
@@ -197,6 +197,8 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
           </div>
         </div>
       </div>
+      <?php include "./update.php" ?>
+
       <footer class="footer py-4  ">
        <?php include "../assets/connection/footer.php" ?>
       </footer>
