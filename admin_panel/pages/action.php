@@ -57,5 +57,13 @@ if(!empty($_POST["del_confdr_id"])){
  
   }
 
+// Notification Deletion Section
+if(!empty($_POST["notification_id"])){
+  
+     $query1 =  $db->prepare("DELETE FROM contact_us WHERE user_id = $_POST[notification_id]");
+     $query1->execute();
+ 
+ 
+  }
 
 ?> 

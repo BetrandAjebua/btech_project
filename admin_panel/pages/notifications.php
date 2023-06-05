@@ -152,7 +152,7 @@
 
               <div class=" alert alert-dark alert-dismissible text-white pl-2 text-sm " role="alert">
                 <span  style="margin-right:8vw"><p  class="text-left text-bolder" class="text-left" ><?php echo "@".($value['submit_time'])." <hr>" ?></p> <a href="javascript:;" class="alert-link text-white text-center d-flex" type="email"><?php echo $value['user_email'] ?></a><p><?php echo $value['user_message'] ?></p></span>
-                <input type="button" name= "<?php echo ($value['user_name']) ?>" class="btn-right text-sm bg-dark rounded-3 text-white" data-bs-dismiss="alert" value="Delete">
+                <input type="button" name= "<?php echo ($value['user_name']) ?>" class="btn-right text-sm bg-dark rounded-3 text-white" onclick="notification_del(<?php echo $value['user_id'] ?>)" value="Delete">
             
                 <input type="button" class="btn-right bg-gradient-danger text-sm  rounded-3 text-white " value="Respond">
                 
@@ -222,6 +222,7 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+    <script src="actionfunction.js"> </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->

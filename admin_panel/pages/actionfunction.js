@@ -104,3 +104,19 @@ function deld_req(value4) {
       }
       });
       }  
+
+
+         // Section Is for the deletion of Notification Message
+        
+    function notification_del(value7) {
+      // Send an AJAX request to the PHP file that will delete the record
+      $.ajax({
+      url: "action.php",
+      type: "POST",
+      data: { notification_id: value7},
+      success: function() {
+        // Reload the page to show the updated data
+        location.reload();
+      }
+      });
+      } 
