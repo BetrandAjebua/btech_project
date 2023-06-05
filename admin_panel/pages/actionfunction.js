@@ -57,3 +57,18 @@ function del_donor(value3) {
     }
     });
     }
+
+// Function to Delete  Donor Request
+function deld_req(value4) {
+    console.log("yes")
+    // Send an AJAX request to the PHP file that will delete the record
+    $.ajax({
+    url: "action.php",
+    type: "POST",
+    data: { deldr_id: value4 },
+    success: function() {
+      // Reload the page to show the updated data
+      location.reload();
+    }
+    });
+    }    

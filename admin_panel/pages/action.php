@@ -12,9 +12,12 @@ if(!empty($_POST["del_id"])){
 }else if(!empty($_POST["deld_id"])){
     $query1 =  $db->prepare("DELETE FROM donor WHERE d_id = $_POST[deld_id]");
     $query1->execute();
+}else if(!empty($_POST["deldr_id"])){
+    $query1 =  $db->prepare("DELETE FROM donor_request WHERE dr_id = $_POST[deldr_id]");
+    $query1->execute();
 }else{
     echo "Data for patient  not found";
 }
 
 
-?>
+?> 
