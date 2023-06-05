@@ -74,7 +74,7 @@ function deld_req(value4) {
     
     
 
-    // Section for the confirmation of request
+    // Section for the confirmation of Donor Request
 
 
     function confirm_donor_request(value5) {
@@ -89,3 +89,18 @@ function deld_req(value4) {
         }
         });
         }  
+
+    // Section for the confirmation of patient Request
+        
+    function confirm_patient_request(value6) {
+      // Send an AJAX request to the PHP file that will delete the record
+      $.ajax({
+      url: "action.php",
+      type: "POST",
+      data: { confpr_id: value6 , del_confpr_id: value6},
+      success: function() {
+        // Reload the page to show the updated data
+        location.reload();
+      }
+      });
+      }  

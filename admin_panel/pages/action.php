@@ -21,8 +21,10 @@ if(!empty($_POST["del_id"])){
 }
 
 
-// This Section is for confirmation of  a request to  registration method
+// // This Section is for confirmation of  a request to  registration method
 
+
+// DONOR CONFIRMATION
  if(!empty($_POST["confdr_id"])){
    $query2 = $db->prepare("INSERT INTO donor 
    (d_name, d_password, d_email, d_number, d_city, d_home_address, 
@@ -40,6 +42,20 @@ if(!empty($_POST["del_confdr_id"])){
 }
 
  }
+ // DONOR CONFIRMATION
+   if(!empty($_POST["confpr_id"])){
+    $query3 = $db->prepare("INSERT INTO patient
+    (p_name, p_password, p_age, p_phone, p_disease, p_blood_group, p_gender, email, reg_time)
+    SELECT pr_name, pr_password, pr_age, pr_phone, pr_disease, pr_blood_group, pr_gender, pr_email, pr_time	
+    FROM patient_request WHERE pr_id = $_POST[confpr_id]" ); 
+ 
+ $query3->execute();
+ if(!empty($_POST["del_confpr_id"])){
+     $query1 =  $db->prepare("DELETE FROM patient_request WHERE pr_id = $_POST[del_confpr_id]");
+     $query1->execute();
+ }
+ 
+  }
 
 
 ?> 

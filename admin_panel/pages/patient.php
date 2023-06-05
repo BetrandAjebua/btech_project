@@ -104,7 +104,7 @@
                           </a>
                         </td>
                         <td class="align-middle">
-                        <button  class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Confirm</button>
+                        <button  class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize " onclick="confirm_patient_request(<?php echo $value->pr_id?>)">Confirm</button>
                           <button onclick="deletereq(<?php  echo $value->pr_id ?>)" class="btn btn-sm-1 btn-danger text-white text-capitalize " >Reject</button>
                         
                         </td>
