@@ -59,10 +59,10 @@
 
     if (!empty($_GET['id'])) {
       // echo $_GET['id'];
-      $patient_id =  $_GET['id'];
+      $donor_id =  $_GET['id'];
       // geting record of the selected user
 
-      $query_get_data = $db->prepare("SELECT * FROM patient WHERE p_id = '$patient_id'");
+      $query_get_data = $db->prepare("SELECT * FROM donor WHERE d_id = '$donor_id'");
       $query_get_data->execute();
       if ($query_get_data) {
         foreach ($query_get_data->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
@@ -85,31 +85,43 @@
 
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label text-sm">Name</label>
-                      <input type="text" class="form-control" name="p_name" value="<?php echo $value->p_name  ?>">
+                      <input type="text" class="form-control" name="p_name" value="<?php echo $value->d_name  ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label text-sm">Age</label>
-                      <input type="number" class="form-control" name="p_age" value="<?php echo $value->p_age  ?>">
+                      <label class="form-label text-sm">email</label>
+                      <input type="email" class="form-control" name="p_age" value="<?php echo $value->d_email  ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
                       <label class="form-label text-sm">Phone Number</label>
-                      <input type="text" class="form-control" name="p_number" value="<?php echo $value->p_phone  ?>">
+                      <input type="text" class="form-control" name="p_number" value="<?php echo $value->d_number  ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label text-sm">Disease</label>
-                      <input type="text" class="form-control" name="p_disease" value="<?php echo $value->p_disease  ?>">
+                      <label class="form-label text-sm">City</label>
+                      <input type="text" class="form-control" name="p_disease" value="<?php echo $value->d_city ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label text-sm">Blood Group</label>
-                      <input type="text" class="form-control" name="p_bgroup" value="<?php echo $value->p_blood_group  ?>">
+                      <label class="form-label text-sm">Home Address</label>
+                      <input type="text" class="form-control" name="p_bgroup" value="<?php echo $value->d_home_address ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label text-sm">Gender</label>
-                      <input type="text" class="form-control" name="p_gender" value="<?php echo $value->p_gender  ?>">
+                      <label class="form-label text-sm">Blood-Type</label>
+                      <input type="text" class="form-control" name="p_gender" value="<?php echo $value->d_blood_group  ?>">
                     </div>
                     <div class="input-group input-group-outline mb-3">
-                      <label class="form-label text-sm">Email</label>
-                      <input type="email" class="form-control" name="p_email" value="<?php echo $value->email  ?>">
+                      <label class="form-label text-sm">Guadian Name</label>
+                      <input type="email" class="form-control" name="p_email" value="<?php echo $value->guadian_name ?>">
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label text-sm">Guadian Name</label>
+                      <input type="email" class="form-control" name="p_email" value="<?php echo $value->guadian_name ?>">
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label text-sm">Guadian Number</label>
+                      <input type="email" class="form-control" name="p_email" value="<?php echo $value->guadian_number ?>">
+                    </div>
+                    <div class="input-group input-group-outline mb-3">
+                      <label class="form-label text-sm">Guardian Address</label>
+                      <input type="email" class="form-control" name="p_email" value="<?php echo $value->guadian_home_address ?>">
                     </div>
                     <?php  }; ?>
                     <div class="text-center">
@@ -147,8 +159,8 @@
 
 
 
-      $queryUpdate =  $db->prepare(" UPDATE patient SET p_name='$p_name', p_age='$p_age', p_phone='$p_number', 
- p_disease='$p_disease', p_blood_group='$p_bgroup', p_gender='$p_gender', email='$p_email' WHERE p_id=$value->p_id");
+      $queryUpdate =  $db->prepare(" UPDATE donor SET d_name='$p_name', d_age='$p_age', d_phone='$p_number', 
+ p_disease='$p_disease', d_blood_group='$p_bgroup', d_gender='$p_gender', email='$p_email' WHERE p_id=$value->p_id");
       $queryUpdate->execute();
       if ($queryUpdate) {
         echo "Query Executed";

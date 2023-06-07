@@ -181,8 +181,10 @@
                         </td>
                         <td class="align-middle">
                           <button class="btn btn-sm-1 btn-danger text-white text-capitalize " onclick="del_donor(<?php echo $value->d_id   ?>)">Delete</button>
-                          <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Update</button>
-                          <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
+                          <form action="update_donor.php" method="get" style="display:inline">
+                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize "  type="submit" name="id" value="<?php echo $value->d_id   ?>">Update</button>
+                      </form>
+                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
                         </td>
                       </tr>
                     <?php  } ?>

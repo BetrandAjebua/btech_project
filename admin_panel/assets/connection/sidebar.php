@@ -33,7 +33,10 @@
                                                 }     ?>  " href="/admin_panel/pages/donor.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     </div>
-                    <span class="nav-link-text ms-1">Donors</span>
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                                        <span class="nav-link-text ms-1">Donors</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -44,24 +47,13 @@
                                                 }     ?>  " href="/admin_panel/pages/patient.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     </div>
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
                     <span class="nav-link-text ms-1">Patients</span>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/billing.html">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
 
-                    </div>
-                    <span class="nav-link-text ms-1">Billing</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white " href="./pages/virtual-reality.html">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    </div>
-                    <span class="nav-link-text ms-1">Virtual Reality</span>
-                </a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/notifications.php') {
                                                     echo ('active bg-gradient-danger');
@@ -70,6 +62,9 @@
                                                 }   ?>" href="/admin_panel/pages/notifications.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     </div>
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
                     <span class="nav-link-text ms-1">Notifications</span>
                 </a>
             </li>
@@ -77,7 +72,11 @@
                 <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white  " href="./pages/profile.html">
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-in.php') {
+                                                    echo ('active bg-gradient-danger');
+                                                } else {
+                                                    echo ("inactive");
+                                                }   ?>  " href="/admin_panel/pages/profile.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                     </div>
                     <span class="nav-link-text ms-1">Profile</span>
@@ -90,7 +89,8 @@
                                                     echo ("inactive");
                                                 }   ?> " href="/admin_panel/pages/sign-in.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10 ">@</i>
+                        
+                    <i class="fa-solid fa-message-dots"></i>
                     </div>
                     <span class="nav-link-text ms-1">Sign In</span>
                 </a>
@@ -102,7 +102,8 @@
                                                     echo ("inactive");
                                                 }   ?> " href="/admin_panel/pages/sign-up.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="material-icons opacity-10">&</i>
+                        
+                    <i class="fa-solid fa-message-dots"></i>
                     </div>
                     <span class="nav-link-text ms-1">Sign Up</span>
                 </a>
@@ -111,7 +112,7 @@
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0 ">
         <div class="mx-3">
-            <a class="btn bg-gradient-danger mt-4 w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+            <a class="btn bg-gradient-danger mt-4 w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Logout </a>
         </div>
     </div>
 </aside>

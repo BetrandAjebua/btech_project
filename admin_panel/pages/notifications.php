@@ -31,8 +31,8 @@
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
+                <i class="fa fa-user me-sm-1 text-danger"></i>
+                <span class="d-sm-inline d-none">Logout</span>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -46,12 +46,12 @@
             </li>
             <li class="nav-item px-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0">
-                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                <i class="fa fa-cog text-danger fixed-plugin-button-nav cursor-pointer"></i>
               </a>
             </li>
             <li class="nav-item dropdown pe-2 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell cursor-pointer"></i>
+                <i class="fa fa-bell text-danger cursor-pointer"></i>
               </a>
               <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                 <li class="mb-2">
@@ -161,43 +161,7 @@
               <?php   }?>  
           </div>
             
-          <div class="card mt-4">
-            <div class="card-header p-3">
-              <h5 class="mb-0">Notifications</h5>
-              <p class="text-sm mb-0">
-                This notifications are messages sent from the general public to either provide  or request for information
-              </p>
-            </div>
-            <div class="card-body p-3">
-              <div class="row ">
-                <div class="col-lg-5 col-sm-6 col-12 mt-lg-0 mt-2">
-                  <button class="btn bg-gradient-dark w-300 mb-0 toast-btn" type="button" data-target="warningToast">Send Delivery Confirmation</button>
-                </div>
-                <div class="col-lg-5 col-sm-6 col-12 mt-lg-0 mt-2 text-center">
-                  <button class="btn bg-gradient-danger w-300 mb-0 toast-btn" type="button" data-target="dangerToast">Cancel All Notification</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="position-fixed bottom-1 end-1 z-index-2">
-        <div class="toast fade hide p-2 bg-white" role="alert" aria-live="assertive" id="successToast" aria-atomic="true">
-          <div class="toast-header border-0">
-            <i class="material-icons text-success me-2">
-        check
-      </i>
-            <span class="me-auto font-weight-bold">Material Dashboard </span>
-            <small class="text-body">11 mins ago</small>
-            <i class="fas fa-times text-md ms-3 cursor-pointer" data-bs-dismiss="toast" aria-label="Close"></i>
-          </div>
-          <hr class="horizontal dark m-0">
-          <div class="toast-body">
-            Hello, world! This is a notification message.
-          </div>
-        </div>
-        
-      </div>
+ 
       <footer class="footer py-4  ">
 <?php include "../assets/connection/footer.php";?>
         
