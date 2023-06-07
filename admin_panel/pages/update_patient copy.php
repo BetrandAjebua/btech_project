@@ -27,10 +27,7 @@ $p_email=htmlspecialchars($_POST[ "p_email"]);
 
 
 <style>
-  #content{
-    
-    
-  }
+
 .page-header{
   background-color:white;
   width:40vw;
@@ -48,7 +45,7 @@ $p_email=htmlspecialchars($_POST[ "p_email"]);
 ?>
 </style>
      <div class="modal" id="<?php echo 'love'.$value->p_id ?>">
-     <div  class="modal-dialog page-header min-vh-60 text-center rounded-3" style=" z-index=9">
+     <div  class="modal-dialog page-header min-vh-60 text-center rounded-3">
             <div class="col-xl-10 col-lg-8 col-md-8 d-flex flex-column ms-auto me-auto ms-lg-auto ">
               <div class=" modal-content card card-plain">
                 <div class=" modal-header bg-gradient-danger text-white">
@@ -96,6 +93,4 @@ $p_email=htmlspecialchars($_POST[ "p_email"]);
         </div>
       </div>
      </div>
-     <script>
-
-     </script>
+     

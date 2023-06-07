@@ -147,6 +147,7 @@
                   <tbody>
                    
 <?php   
+// Getting all data from patient record
 $query= $db->prepare("SELECT * FROM patient");
 $query->execute();
 
@@ -185,11 +186,13 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
                       </td>
                       <td class="align-middle">
                       <button class="btn btn-sm-1 btn-danger text-white text-capitalize " onclick="deletePatient(<?php echo $value->p_id  ?>)" >Delete</button>
-                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize " data-toggle="modal" data-target="<?php echo "#love".$value->p_id  ?>">Update</button>
+                      <form action="update_patient.php" method="get" role="form" style="display:inline">
+                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize "  type="submit" name="id" value="<?php echo $value->p_id  ?>">Update</button>
+                      </form>
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
                       </td>
                     </tr>
-                    <?php   include "./update_patient.php"; }?>
+                    <?php }?>
                   </tbody>
                 </table>
               </div>
