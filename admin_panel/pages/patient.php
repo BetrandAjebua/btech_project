@@ -285,6 +285,7 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="./jquery.js"> </script>
   <script src="actionfunction.js"> </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>

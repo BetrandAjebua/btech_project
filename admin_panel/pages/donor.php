@@ -276,6 +276,7 @@
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script src="./jquery.js"> </script>
   <script src="actionfunction.js"></script>
   <script>
     var win = navigator.platform.indexOf('Win') > -1;

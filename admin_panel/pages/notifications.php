@@ -222,6 +222,7 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+    <script src="./jquery.js"> </script>
     <script src="actionfunction.js"> </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
