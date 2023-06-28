@@ -1,8 +1,8 @@
 {
-  "name": "material-dashboard",
+  "name": "blood bank dashboard",
   "version": "1.0.0",
-  "description": "Freebie Dashboard for Bootstrap 5",
-  "main": "pages/dashboard.html",
+  "description": "this is to manage data of Blood record",
+  "main": "pages/index.php",
   "directories": {
     "example": "root"
   },
@@ -14,27 +14,25 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/material-dashboard.git"
+    "url": "git+https://github.com/BetrandAjebua/btechProject.git"
   },
   "keywords": [
-    "material dashboard",
-    "bootstrap 5",
-    "dashboard",
-    "creative tim",
-    "html dashboard",
-    "html css dashboard",
-    "web dashboard",
-    "freebie",
-    "free bootstrap dashboard",
-    "css3 dashboard",
-    "bootstrap dashboard",
-    "frontend",
-    "responsive bootstrap dashboard"
+    "Betrand Ajebua",
+    "blood bank Cameroon",
+    "blood record",
+    "donate blood",
+    "blood request",
+    "betrand ajebua",
+    "cameroon blood bank",
+    "blood bank",
+    "find blood donation",
+    "be a blood donor",
+    "register patient"
   ],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
+  "author": "Betrand Ajebua",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/material-dashboard/issues"
+    "url": "git+https://github.com/BetrandAjebua/issues"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
@@ -45,5 +43,5 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-open": "^3.0.1"
   },
-  "homepage": "http://creative-tim.com/product/material-dashboard"
+  "homepage": "http://github.com/BetrandAjebua/index.php"
 }

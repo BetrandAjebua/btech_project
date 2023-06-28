@@ -127,6 +127,19 @@
         </div>
       </div>
     </nav>
+    <?php
+       ;
+        $query =  $db->prepare(" SELECT quantity FROM blood_type");
+        $query->execute();
+        $lo= $query->fetchAll(PDO::FETCH_ASSOC);
+        $arr= array();
+        $blood_total=0;
+       foreach ($lo as $key => $value) {
+    $arr[$key]=$value["quantity"];
+    $blood_total += $value["quantity"];
+
+       }
+    ?>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">
@@ -138,7 +151,10 @@
               </div>
               <div class="text-end pt-1 ">
                 <p class="text-sm mb-0 text-capitalize">Annual Demand: <span>high</span></p>
-                <h4 class="mb-0 text-danger">300</h4>
+                <h4 class="mb-0 text-danger"><?php
+                echo $blood_total;
+                    ?>
+                </h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -155,12 +171,13 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Quantity</p>
-                <h4 class="mb-0">55</h4>
+                <h4 class="mb-0"><?php   
+              echo ($arr[0])  ?></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
-              <p class="mb-0"><span class="text-dark text-sm font-weight-bolder text-center">40 pines </span>Transfer this Year</p>
+              <p class="mb-0"><span class="text-dark text-sm font-weight-bolder text-center">30 pines </span>Transfer this Year</p>
             </div>
           </div>
         </div>
@@ -172,7 +189,8 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Quantity</p>
-                <h4 class="mb-0">60</h4>
+                <h4 class="mb-0"><?php   
+              echo ($arr[1])  ?></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -189,7 +207,8 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Quantity</p>
-                <h4 class="mb-0">20</h4>
+                <h4 class="mb-0"><?php   
+              echo ($arr[2])  ?></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -206,7 +225,8 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Quantity</p>
-                <h4 class="mb-0">67</h4>
+                <h4 class="mb-0"><?php   
+              echo ($arr[3])  ?></h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">

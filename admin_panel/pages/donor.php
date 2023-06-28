@@ -160,23 +160,23 @@
                               <img src="../assets/img/tean-1.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                             </div>
                             <div class="d-flex flex-column justify-content-center">
-                              <h6 class="mb-0 text-sm"><?php echo ($value->d_name);   ?></h6>
-                              <p class="text-xs text-secondary mb-0"><?php echo ($value->d_email);   ?></p>
+                              <h6 class="mb-0 text-sm" id="dname"><?php echo ($value->d_name);   ?></h6>
+                              <p class="text-xs text-secondary mb-0" id='demail'><?php echo ($value->d_email);   ?></p>
                             </div>
                           </div>
                         </td>
                         <td>
-                          <p class="text-xs font-weight-bold mb-0"><?php echo ($value->d_home_address);   ?></p>
-                          <p class="text-xs text-secondary mb-0"><?php echo ($value->d_city);   ?></p>
+                          <p class="text-xs font-weight-bold mb-0" id='dhaddress'><?php echo ($value->d_home_address);   ?></p>
+                          <p class="text-xs text-secondary mb-0" id = 'dcity'><?php echo ($value->d_city);   ?></p>
                         </td>
                         <td class="align-middle text-center text-sm">
-                          <span class="badge badge-sm bg-gradient-dark"><?php echo ($value->d_blood_group);   ?></span>
+                          <span class="badge badge-sm bg-gradient-dark" id='dbg'><?php echo ($value->d_blood_group);   ?></span>
                         </td>
                         <td class="align-middle text-center">
-                          <span class="text-secondary text-xs font-weight-bold"><?php echo ($value->d_mstatus);   ?></span>
+                          <span class="text-secondary text-xs font-weight-bold " id='dms'><?php echo ($value->d_mstatus);   ?></span>
                         </td>
                         <td class="align-middle">
-                          <span class="text-secondary text-xs font-weight-bold"><?php echo ($value->d_age) . "yrs";   ?></span>
+                          <span class="text-secondary text-xs font-weight-bold" id='dage'><?php echo ($value->d_age) . "yrs";   ?></span>
                           </a>
                         </td>
                         <td class="align-middle">
@@ -184,7 +184,8 @@
                           <form action="update_donor.php" method="get" style="display:inline">
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize "  type="submit" name="id" value="<?php echo $value->d_id   ?>">Update</button>
                       </form>
-                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
+                      
+                      <button type="button" class="btn btn-info btn-lg" id='mess1' data-toggle = 'modal' data-target="#message">Message</button>
                         </td>
                       </tr>
                     <?php  } ?>
@@ -289,6 +290,13 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+
+  <script>
+$(document).ready(function(){
+  $("")
+})
+
+  </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
@@ -296,3 +304,6 @@
 </body>
 
 </html>
+<?php  
+include "./messageUser.php"
+?>
