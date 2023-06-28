@@ -55,6 +55,20 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/request.php') {
+                                                    echo ('active bg-gradient-danger');
+                                                } else {
+                                                    echo ("inactive");
+                                                }   ?>" href="/admin_panel/pages/request.php">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                    </div>
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Blood Request</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/notifications.php') {
                                                     echo ('active bg-gradient-danger');
                                                 } else {
@@ -68,20 +82,12 @@
                     <span class="nav-link-text ms-1">Notifications</span>
                 </a>
             </li>
+            
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Account pages</h6>
+                <hr>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">System Action</h6>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-in.php') {
-                                                    echo ('active bg-gradient-danger');
-                                                } else {
-                                                    echo ("inactive");
-                                                }   ?>  " href="/admin_panel/pages/profile.php">
-                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-                    </div>
-                    <span class="nav-link-text ms-1">Profile</span>
-                </a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-in.php') {
                                                     echo ('active bg-gradient-danger');
@@ -92,7 +98,7 @@
                         
                     <i class="fa-solid fa-message-dots"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Sign In</span>
+                    <span class="nav-link-text ms-1">MakeBlood Request</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -105,7 +111,20 @@
                         
                     <i class="fa-solid fa-message-dots"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Sign Up</span>
+                    <span class="nav-link-text ms-1">Workers</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-up.php') {
+                                                    echo ('active bg-gradient-danger');
+                                                } else {
+                                                    echo ("inactive");
+                                                }   ?> " href="/admin_panel/pages/sign-up.php">
+                    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+                        
+                    <i class="fa-solid fa-message-dots"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Delete-Account</span>
                 </a>
             </li>
         </ul>
