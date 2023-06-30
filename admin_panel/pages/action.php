@@ -1,6 +1,12 @@
+<?php 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require './PHPMailer-master/src/Exception.php';
+require './PHPMailer-master/src/PHPMailer.php';
+require './PHPMailer-master/src/SMTP.php';
+?>
 <?php    
-ini_set('SMTP', 'smtp.gmail.com');
-ini_set('smtp_port', 587);
 
 require "../assets/connection/connect.php";
 
@@ -68,19 +74,18 @@ if(!empty($_POST["notification_id"])){
  
   }
 
-  require 'vendor/autoload.php';
 
   if(!empty($_POST["semail"])){
      $smail = $_POST["semail"];
     $remail = $_POST['remail'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $mail = new PHPMailer\PHPMailer\PHPMailer();
-    $mailHeaders  = $headers = 'From: email@example.com' . "\r\n" .
-    'Reply-To: email@example.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+   
 
-    $mail->Port = 587;
+    
+
+
+ 
 
     if(mail($remail, $subject, $message, $mailHeaders)
     ){
