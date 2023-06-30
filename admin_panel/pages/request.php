@@ -41,6 +41,7 @@
         </div>
       </div>
     </nav>
+    <?php include "../assets/connection/nav.php";?>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       

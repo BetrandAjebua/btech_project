@@ -41,6 +41,7 @@
         </div>
       </div>
     </nav>
+    <?php include "../assets/connection/nav.php";?>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       
@@ -203,7 +204,6 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
 
 <script>
     function mess1(a, b){
-      alert(a, b);
       $('#ssemail').val("betrandajebua@gmail.com");
       $('#rsemail').val(a);
       $('#rid').val("patient_"+b);
