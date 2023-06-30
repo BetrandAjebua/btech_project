@@ -95,10 +95,10 @@ try{
     $mail->isSMTP();
     $mail->Host='smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = "orangeub60@gmail.com";
+    $mail->Username = "kingsbloodbank@gmail.com";
 
     if($hostname="DESKTOP-T03M45J"){
-        $mail->Password = 'beycrsrztywztvjy';
+        $mail->Password = 'lwxzfxrtydjwbxal';
     }
 
    
