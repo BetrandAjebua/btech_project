@@ -147,7 +147,7 @@
           <div class="card">
             <div class="card-header p-3 pt-2">
               <div class="icon icon-lg icon-shape bg-gradient-white shadow-dark text-center border-radius-xl mt-n4 position-absolute p-n5 bg-gradient-dark pt-3 font-weight-bolder">
-                <b class=" opacity-10 text-white pl-3 pt-4">TOTAL</b>
+                <b class=" opacity-10 text-white pt-4">TOTAL</b>
               </div>
               <div class="text-end pt-1 ">
                 <p class="text-sm mb-0 text-capitalize">Annual Demand: <span>high</span></p>
