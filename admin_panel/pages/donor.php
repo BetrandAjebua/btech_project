@@ -185,7 +185,7 @@
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize "  type="submit" name="id" value="<?php echo $value->d_id   ?>">Update</button>
                       </form>
 
-                      <button type="button" class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize" onclick="mess1('<?php echo ($value->d_email)?>')" id='mess1' data-toggle = 'modal' data-target="#message">Message</button>
+                      <button type="button" class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize" onclick="mess1('<?php echo ($value->d_email)?>', '<?php echo($value->d_id)?>')" id='mess1' data-toggle = 'modal' data-target="#message">Message</button>
                         </td>
                       </tr>
                     <?php  } ?>
@@ -196,10 +196,11 @@
 
   </script>
   <script>
-    function mess1(a){
-      alert(a);
+    function mess1(a, b){
+      alert(a, b);
       $('#ssemail').val("betrandajebua@gmail.com");
       $('#rsemail').val(a);
+      $('#rid').val("donor_"+b);
     }
   </script>
 

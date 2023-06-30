@@ -36,8 +36,10 @@
 
                         <div class="col-sm-9">
                             <input type="message" id="rsmessage" class="form-control" style='border: 2px solid black' id="message" name="message">
+                            <input hidden type="message" id="rid" class="form-control" style='border: 2px solid black' name="receiver_id">
                         </div>
                     </div>
+                    
                     <div class="modal-footer">
                 <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
                 <button type="submit" class="btn btn-danger btn-flat" id='send' name="edit"><i class="bi bi-send"></i>Send</button>

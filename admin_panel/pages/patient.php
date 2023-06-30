@@ -189,11 +189,27 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
                       <form action="update_patient.php" method="get" role="form" style="display:inline">
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize "  type="submit" name="id" value="<?php echo $value->p_id  ?>">Update</button>
                       </form>
-                      <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize ">Message</button>
+                      <button type="button" class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize" onclick="mess1('<?php echo ($value->email)?>', '<?php echo($value->p_id)?>')" id='mess1' data-toggle = 'modal' data-target="#message">Message</button>
                       </td>
                     </tr>
-                    <?php }?>
+                    <?php }
+                    
+                    
+                    
+                    ?>
                   </tbody>
+
+<!-- this is the script to copy data to modal form -->
+
+<script>
+    function mess1(a, b){
+      alert(a, b);
+      $('#ssemail').val("betrandajebua@gmail.com");
+      $('#rsemail').val(a);
+      $('#rid').val("patient_"+b);
+    }
+  </script>
+
                 </table>
               </div>
             </div>
@@ -294,3 +310,6 @@ foreach ($query->fetchAll(PDO::FETCH_OBJ) as $key => $value) {
 </body>
 
 </html>
+<?php  
+include "./messageUser.php"
+?>

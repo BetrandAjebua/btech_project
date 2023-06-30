@@ -1,21 +1,21 @@
-<?php    
+<?php
 
 require "../assets/connection/connect.php";
 
 
 // This Section Describe The Delete Methods of both the  donor and the patients
 
-if(!empty($_POST["del_id"])){
+if (!empty($_POST["del_id"])) {
 
     $query1 =  $db->prepare("DELETE FROM patient WHERE p_id = $_POST[del_id]");
     $query1->execute();
-}else if(!empty($_POST["delreq_id"])){
+} else if (!empty($_POST["delreq_id"])) {
     $query1 =  $db->prepare("DELETE FROM patient_request WHERE pr_id = $_POST[delreq_id]");
     $query1->execute();
-}else if(!empty($_POST["deld_id"])){
+} else if (!empty($_POST["deld_id"])) {
     $query1 =  $db->prepare("DELETE FROM donor WHERE d_id = $_POST[deld_id]");
     $query1->execute();
-}else if(!empty($_POST["deldr_id"])){
+} else if (!empty($_POST["deldr_id"])) {
     $query1 =  $db->prepare("DELETE FROM donor_request WHERE dr_id = $_POST[deldr_id]");
     $query1->execute();
 }
@@ -25,47 +25,44 @@ if(!empty($_POST["del_id"])){
 
 
 // DONOR CONFIRMATION
- if(!empty($_POST["confdr_id"])){
-   $query2 = $db->prepare("INSERT INTO donor 
+if (!empty($_POST["confdr_id"])) {
+    $query2 = $db->prepare("INSERT INTO donor 
    (d_name, d_password, d_email, d_number, d_city, d_home_address, 
    d_blood_group, d_mstatus, guadian_name, guadian_number,
     guadian_home_address, d_age, reg_time)
    SELECT dr_name, dr_pass,dr_email, dr_number,	dr_city,	
    dr_home_address,	dr_bgroup, dr_marital_status, drg_name,
     drg_number, drg_address, dr_age,dr_time
-   FROM donor_request WHERE dr_id = $_POST[confdr_id]" ); 
+   FROM donor_request WHERE dr_id = $_POST[confdr_id]");
 
-$query2->execute();
-if(!empty($_POST["del_confdr_id"])){
-    $query1 =  $db->prepare("DELETE FROM donor_request WHERE dr_id = $_POST[del_confdr_id]");
-    $query1->execute();
+    $query2->execute();
+    if (!empty($_POST["del_confdr_id"])) {
+        $query1 =  $db->prepare("DELETE FROM donor_request WHERE dr_id = $_POST[del_confdr_id]");
+        $query1->execute();
+    }
 }
-
- }
- // DONOR CONFIRMATION
-   if(!empty($_POST["confpr_id"])){
+// DONOR CONFIRMATION
+if (!empty($_POST["confpr_id"])) {
     $query3 = $db->prepare("INSERT INTO patient
     (p_name, p_password, p_age, p_phone, p_disease, p_blood_group, p_gender, email, reg_time)
     SELECT pr_name, pr_password, pr_age, pr_phone, pr_disease, pr_blood_group, pr_gender, pr_email, pr_time	
-    FROM patient_request WHERE pr_id = $_POST[confpr_id]" ); 
- 
- $query3->execute();
- if(!empty($_POST["del_confpr_id"])){
-     $query1 =  $db->prepare("DELETE FROM patient_request WHERE pr_id = $_POST[del_confpr_id]");
-     $query1->execute();
- }
- 
-  }
+    FROM patient_request WHERE pr_id = $_POST[confpr_id]");
+
+    $query3->execute();
+    if (!empty($_POST["del_confpr_id"])) {
+        $query1 =  $db->prepare("DELETE FROM patient_request WHERE pr_id = $_POST[del_confpr_id]");
+        $query1->execute();
+    }
+}
 
 // Notification Deletion Section
-if(!empty($_POST["notification_id"])){
-  
-     $query1 =  $db->prepare("DELETE FROM contact_us WHERE user_id = $_POST[notification_id]");
-     $query1->execute();
- 
- 
-  }
-  use PHPMailer\PHPMailer\PHPMailer;
+if (!empty($_POST["notification_id"])) {
+
+    $query1 =  $db->prepare("DELETE FROM contact_us WHERE user_id = $_POST[notification_id]");
+    $query1->execute();
+}
+
+use PHPMailer\PHPMailer\PHPMailer;
 
 require "./PHPMailer-master/src/Exception.php";
 require "./PHPMailer-master/src/PHPMailer.php";
@@ -74,59 +71,49 @@ require "./PHPMailer-master/src/SMTP.php";
 
 $mail =  new PHPMailer(true);
 
-  if(!empty($_POST["semail"])){
+if (!empty($_POST["semail"])) {
 
-     $smail = $_POST["semail"];
+    $smail = $_POST["semail"];
     $remail = $_POST['remail'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-   
- 
-  
-try{
-  
-    $hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-
-    echo $hostname;
-   
-    
+    $receiver_id = $_POST['receiver_id'];
 
 
-    $mail->isSMTP();
-    $mail->Host='smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = "kingsbloodbank@gmail.com";
 
-    if($hostname="DESKTOP-T03M45J"){
+    try {
+
+
+
+
+
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = "kingsbloodbank@gmail.com";
         $mail->Password = 'lwxzfxrtydjwbxal';
+
+
+
+        $mail->SMTPSecure = "tls";
+        $mail->Port = '587';
+
+        $mail->setFrom($remail);
+        $mail->addAddress($remail);
+
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        $check = $mail->send();
+        if ($check) {
+            $saveMessage= $db->prepare("INSERT INTO sentemail ( receiver, `subject`, `message`,  receiver_id) 
+            VALUES ('$remail', '$subject', '$message',  '$receiver_id')")->execute();
+
+            echo '<div class="alert-success"><span>Message Sent</span> </div>';
+            // header("location: donor.php");
+        }
+    } catch (Exception $e) {
+        echo  '<div class="alert-error"><span>' . $e->getMessage() . '</span> </div>';
     }
-
-   
-    $mail->SMTPSecure = "tls";
-    $mail->Port = '587';
-
-    $mail->setFrom('betrandajebua@gmail.com');
-    $mail->addAddress('betrandajebua@gmail.com');
-
-    $mail->isHTML(true);
-    $mail->Subject = $subject;
-    $mail->Body = $message;
-
-    $check= $mail->send();
-   if($check){
-    echo '<div class="alert-success"><span>Message Sent</span> </div>';
-   }
-
-
-}catch(Exception $e){
-   echo  '<div class="alert-error"><span>'.$e->getMessage().'</span> </div>';
 }
- 
-
-   
-
-
- }
-?> 
-
-
