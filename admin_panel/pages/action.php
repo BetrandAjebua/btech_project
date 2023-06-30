@@ -1,11 +1,3 @@
-<?php 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require './PHPMailer-master/src/Exception.php';
-require './PHPMailer-master/src/PHPMailer.php';
-require './PHPMailer-master/src/SMTP.php';
-?>
 <?php    
 
 require "../assets/connection/connect.php";
@@ -73,27 +65,65 @@ if(!empty($_POST["notification_id"])){
  
  
   }
+  use PHPMailer\PHPMailer\PHPMailer;
 
+require "./PHPMailer-master/src/Exception.php";
+require "./PHPMailer-master/src/PHPMailer.php";
+require "./PHPMailer-master/src/SMTP.php";
+
+
+$mail =  new PHPMailer(true);
 
   if(!empty($_POST["semail"])){
+
      $smail = $_POST["semail"];
     $remail = $_POST['remail'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
    
+ 
+  
+try{
+  
+    $hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
 
+    echo $hostname;
+   
     
 
 
- 
+    $mail->isSMTP();
+    $mail->Host='smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = "orangeub60@gmail.com";
 
-    if(mail($remail, $subject, $message, $mailHeaders)
-    ){
-        echo "Your Information is Recieved";
-    }else{
-        echo "Your Information NOT sent";
+    if($hostname="DESKTOP-T03M45J"){
+        $mail->Password = 'beycrsrztywztvjy';
     }
 
+   
+    $mail->SMTPSecure = "tls";
+    $mail->Port = '587';
+
+    $mail->setFrom('betrandajebua@gmail.com');
+    $mail->addAddress('betrandajebua@gmail.com');
+
+    $mail->isHTML(true);
+    $mail->Subject = $subject;
+    $mail->Body = $message;
+
+    $check= $mail->send();
+   if($check){
+    echo '<div class="alert-success"><span>Message Sent</span> </div>';
+   }
+
+
+}catch(Exception $e){
+   echo  '<div class="alert-error"><span>'.$e->getMessage().'</span> </div>';
+}
+ 
+
+   
 
 
  }
