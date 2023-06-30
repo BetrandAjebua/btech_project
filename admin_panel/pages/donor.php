@@ -184,13 +184,25 @@
                           <form action="update_donor.php" method="get" style="display:inline">
                       <button class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize "  type="submit" name="id" value="<?php echo $value->d_id   ?>">Update</button>
                       </form>
-                      
-                      <button type="button" class="btn btn-info btn-lg" id='mess1' data-toggle = 'modal' data-target="#message">Message</button>
+
+                      <button type="button" class="btn btn-sm-1 bg-gradient-dark text-white text-capitalize" onclick="mess1('<?php echo ($value->d_email)?>')" id='mess1' data-toggle = 'modal' data-target="#message">Message</button>
                         </td>
                       </tr>
                     <?php  } ?>
                   </tbody>
                 </table>
+                <script>
+
+
+  </script>
+  <script>
+    function mess1(a){
+      alert(a);
+      $('#ssemail').val("betrandajebua@gmail.com");
+      $('#rsemail').val(a);
+    }
+  </script>
+
               </div>
             </div>
           </div>
@@ -291,12 +303,7 @@
     }
   </script>
 
-  <script>
-$(document).ready(function(){
-  $("")
-})
 
-  </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->

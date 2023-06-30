@@ -1,3 +1,25 @@
+<?php
+
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\OAuthTokenProvider;
+
+    
+    /* Exception class. */
+    require '../PHPMailer-master/src/Exception.php';
+    /* The main PHPMailer class. */
+    require '../PHPMailer-master/src/PHPMailer.php';
+    /* SMTP class, needed if you want to use SMTP. */
+    require '../PHPMailer-master/src/SMTP.php';
+    require '../PHPMailer-master/src/OAuth.php';
+    // require '../PHPMailer-master/src/OAuthTokenProvider.php';
+    
+    /* ... */
+    
+
+?>
+
+
 <?php    
 
 require "../assets/connection/connect.php";
@@ -66,4 +88,40 @@ if(!empty($_POST["notification_id"])){
  
   }
 
+
+  if(!empty($_POST["semail"])){
+     $smail = $_POST["semail"];
+    $remail = $_POST['remail'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+
+$mail = new PHPMailer(true);
+
+$mail->isSMTP();
+$mail->Host = 'smtp.gmail.com';
+$mail->SMTPAuth= true;
+$mail->Username = "betrandajebua@gmail.com";
+$mail->Password = "Beto1234beto2@";
+$mail->SMTPSecure = 'ssl';
+$mail->Port = 465;
+
+
+
+$mail->setFrom('betrandajebua@gmail.com',"Betrand Ajebua");
+$mail->addAddress($remail);
+$mail->isHTML(true);
+$mail->Subject = $subject;
+$mail->Body = $message;
+
+$mail->send();
+if($mail->send()){
+    echo ('Email Sent');
+}else{  
+    echo ("NOt Sent");
+}
+
+ }
 ?> 
+
+
