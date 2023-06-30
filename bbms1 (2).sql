@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2023 at 12:02 PM
+-- Generation Time: Jun 30, 2023 at 05:41 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -211,6 +211,31 @@ CREATE TABLE `patient_request` (
   `pr_email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sentemail`
+--
+
+CREATE TABLE `sentemail` (
+  `message_id` int(11) NOT NULL,
+  `receiver` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` varchar(1024) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp(),
+  `receiver_id` varchar(56) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sentemail`
+--
+
+INSERT INTO `sentemail` (`message_id`, `receiver`, `subject`, `message`, `time`, `receiver_id`) VALUES
+(1, 'admin@gmail.com', 'poo', 'poo', '2023-06-30 15:20:55', 'donor_admin@gmail.com'),
+(2, 'admin@gmail.com', 'Yes', 'yes', '2023-06-30 15:28:46', 'donor_undefined'),
+(3, 'jame@gmail.com', 'tyr', 'fhfddf', '2023-06-30 15:32:21', 'donor_33'),
+(4, 'Johny@l.con', 'You are a patient', 'you need a daily supply of blood to survive', '2023-06-30 15:38:01', 'patient_8');
+
 --
 -- Indexes for dumped tables
 --
@@ -252,6 +277,12 @@ ALTER TABLE `patient`
   ADD PRIMARY KEY (`p_id`);
 
 --
+-- Indexes for table `sentemail`
+--
+ALTER TABLE `sentemail`
+  ADD PRIMARY KEY (`message_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -290,6 +321,12 @@ ALTER TABLE `donor_request`
 --
 ALTER TABLE `patient`
   MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `sentemail`
+--
+ALTER TABLE `sentemail`
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
