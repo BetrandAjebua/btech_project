@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2023 at 11:42 AM
+-- Generation Time: Jun 30, 2023 at 12:02 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -86,7 +86,9 @@ CREATE TABLE `contact_us` (
 --
 
 INSERT INTO `contact_us` (`user_id`, `user_name`, `user_email`, `user_subject`, `user_message`, `submit_time`) VALUES
+(7, 'BETRAND AJEBUA', 'B@GMAIL.COM', 'SFSF', 'WFWFWF', '2023-05-12 15:06:16'),
 (8, 'GNFDN', 'DSDG@GM.HTH', 'RER', 'THEHEHGER', '2023-05-12 15:08:16'),
+(9, '', '', '', '', '2023-05-12 15:34:19'),
 (10, 'r23r', '3r23@gmail.com', '32r23', '3r23', '2023-05-12 15:39:47'),
 (11, 'sdsdgsd', 'dsgds@fsa.com', 'reger', 'grg', '2023-05-12 17:05:08'),
 (12, 'hiv ', 'a@GMAIL.DD', 'EQEQ', 'EQE', '2023-05-12 17:09:58'),
@@ -125,9 +127,13 @@ CREATE TABLE `donor` (
 --
 
 INSERT INTO `donor` (`d_id`, `d_name`, `d_password`, `d_email`, `d_number`, `d_city`, `d_home_address`, `d_blood_group`, `d_mstatus`, `guadian_name`, `guadian_number`, `guadian_home_address`, `d_age`) VALUES
+(32, 'Ransome Jervert', '$2y$10$0EYGz9YgRHlCtDWr4OnLmOSDtKakSlMHONWjHzeLZOdzkKtu2dhpK', 'admin@gmail.com', 67345678, 'Buea', 'Check Point', 'A', 'Single', 'John Wong', 678325675, 'Muea', 24),
+(33, 'James love', '$2y$10$/AOaFp5hx9x6Cg7LHgABpuJRtWwutsGCFvXHxHwB5JOkGhyvoJIr.', 'jame@gmail.com', 678093456, 'Kumba', 'Fiango', 'B', 'Maried', 'Oncle Ben', 678953465, 'Kosala', 50),
+(34, 'James love', '$2y$10$PwaWQjkeCyDx3ipZtEmqze0J4lt7pDCjwYAYWnbyBqkZJyYp0CfaW', 'jame@gmail.com', 678093456, 'Kumba', 'Fiango', 'B', 'Maried', 'Oncle Ben', 678953465, 'Kosala', 50),
 (35, 'James lover', '$2y$10$mP0f3fueSxix7fTLAzimY.PYv9DH1/mP1HMZ8/9euQm4/CWd/eyfq', 'jame@gmail.com', 678093456, 'Kumba', 'Fiango', 'B', 'Maried', 'Oncle Ben', 678953465, 'Kosala', 50),
-(37, 'wino', '$2y$10$4QDVf7Ihtt9Rc285aWk.buALr54acnLNGahhPGKkuhmHrq8wj./vG', 'admin@d.h', 453263, 'fbdfh', 'fgf', 'AB', 'Single', 'gdds', 4565366, 'dsvdsgd', 1111),
-(38, 'merlin', '$2y$10$.AxAjL1VDvxi0.KzYUgQ0.rS89McnlQm22ByI8lsgGnsYIt5YYPti', 'admin@d.e', 214, '4343', '14fdsfsd', 'A', 'Maried', 'cvzxcx', 0, 'sv zsv', 11);
+(37, 'wino', '$2y$10$4QDVf7Ihtt9Rc285aWk.buALr54acnLNGahhPGKkuhmHrq8wj./vG', 'admin@d.h', 453263, 'fbdfh', 'fgf', 'AB', 'Maried', 'gdds', 4565366, 'dsvdsgd', 1111),
+(38, 'merlin', '$2y$10$.AxAjL1VDvxi0.KzYUgQ0.rS89McnlQm22ByI8lsgGnsYIt5YYPti', 'admin@d.e', 214, '4343', '14fdsfsd', 'A', 'Maried', 'cvzxcx', 0, 'sv zsv', 11),
+(39, 'John', '$2y$10$COpVyOBYondt9kHGDycEduo8uVoGjRm96MwPD6OOp4OKbDkEfmhtq', '40@cv.jh', 235255, 'Belgium', 'dfwe', 'A', 'Maried', 'ewfew', 0, 'ewf', 50);
 
 -- --------------------------------------------------------
 
@@ -151,6 +157,14 @@ CREATE TABLE `donor_request` (
   `drg_address` varchar(255) NOT NULL,
   `dr_time` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `donor_request`
+--
+
+INSERT INTO `donor_request` (`dr_id`, `dr_name`, `dr_pass`, `dr_age`, `dr_email`, `dr_number`, `dr_city`, `dr_home_address`, `dr_bgroup`, `dr_marital_status`, `drg_name`, `drg_number`, `drg_address`, `dr_time`) VALUES
+(1, 'Jones Wiker', 0, 34, 'joneswik@gmail.com', 67897634, 'Kumba', 'Fiango', 'B', 'Single', 'Loveline Jono', 656789746, 'Kosala', '2023-06-03 16:27:01'),
+(2, 'Jon Demaze', 0, 56, 'lonjon@gmail.com', 687546445, 'Kambe', 'Fotu street 3', 'O', 'Maried', 'Lopetu Fang', 678476454, 'Betilo-Door', '2023-06-03 16:31:20');
 
 -- --------------------------------------------------------
 
@@ -176,7 +190,7 @@ CREATE TABLE `patient` (
 --
 
 INSERT INTO `patient` (`p_id`, `p_name`, `p_password`, `p_age`, `p_phone`, `p_disease`, `p_blood_group`, `p_gender`, `email`, `req_time`) VALUES
-(6, 'Betrand', '$2y$10$r38s7oj9SLY/6fAZsh2OdOYAgwmrqiF5vr9BOZ./9xH.Iy.DfPSc6', 45, '3452523', 'sczxvxc', 'AB ', 'Maried', 'admin@g.g', '2023-06-03'),
+(6, 'Vincent', '$2y$10$r38s7oj9SLY/6fAZsh2OdOYAgwmrqiF5vr9BOZ./9xH.Iy.DfPSc6', 45, '3452523', 'sczxvxc', 'AB ', 'Maried', 'admin@g.g', '2023-06-03'),
 (8, 'Johny', '$2y$10$y5jbuk8tyOJDIl5Nzv14WuhONfoxxZOSnGwycMLikNaYT73tagvj.', 56, '24435', 'Blood cancer', 'AB ', 'Single', 'Johny@l.con', '2023-06-03');
 
 -- --------------------------------------------------------
@@ -196,13 +210,6 @@ CREATE TABLE `patient_request` (
   `pr_gender` text NOT NULL,
   `pr_email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `patient_request`
---
-
-INSERT INTO `patient_request` (`pr_id`, `pr_name`, `pr_password`, `pr_age`, `pr_phone`, `pr_disease`, `pr_blood_group`, `pr_gender`, `pr_email`) VALUES
-(0, 'Lovert Mbah', '$2y$10$RNVjbpM18f7esBvfDnT2mOOe/kuFE9ZWZL6T77XnTQRs6WI9nROqC', 45, '67894567', 'Jalia', 'AB ', 'Female', 'lovert@gmail.com');
 
 --
 -- Indexes for dumped tables
