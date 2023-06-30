@@ -62,6 +62,8 @@ if (!empty($_POST["notification_id"])) {
     $query1->execute();
 }
 
+
+//Sending Email Section 
 use PHPMailer\PHPMailer\PHPMailer;
 
 require "./PHPMailer-master/src/Exception.php";
@@ -111,9 +113,14 @@ if (!empty($_POST["semail"])) {
             VALUES ('$remail', '$subject', '$message',  '$receiver_id')")->execute();
 
             echo '<div class="alert-success"><span>Message Sent</span> </div>';
-            // header("location: donor.php");
+            header("location: donor.php");
         }
     } catch (Exception $e) {
         echo  '<div class="alert-error"><span>' . $e->getMessage() . '</span> </div>';
     }
+
+
+    // Adding Donation
+
+    if(isset($_POST))
 }

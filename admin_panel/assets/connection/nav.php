@@ -5,7 +5,7 @@
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-right">
-              <button href="javascript:;" class="nav-link text-body font-weight-bold px-0 btn-danger  btn-rounded-0 p-1">
+              <button data-toggle="modal" data-target="#add_donation"  class="nav-link text-body font-weight-bold px-0 btn-danger  btn-rounded-0 p-1">
                 <i class="fa fa-plus me-sm-1 text-white"></i>
                 <span class="d-sm-inline d-none text-white">Add donation</span>
 </button>
@@ -53,3 +53,46 @@
         </div>
       </div>
     </nav>
+
+    <div class="modal fade" id="add_donation">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><b>Message</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" method="POST" action="action.php">
+                    <input type="hidden" class="catid" name="id">
+                    <div class="form-group">
+                        <label for="btype" class="col-sm-3 control-label">Blood Type</label>
+
+                        <div class="col-sm-9">
+                            <select name="btype" id="btype">
+                              <option value="A">A</option>
+                              <option value="A">B</option>
+                              <option value="A">AB</option>
+                              <option value="A">O</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="qnt" class="col-sm-3 control-label">Quantity</label>
+
+                        <div class="col-sm-9">
+                            <input type="number"  id="qnt" class="form-control" style='border: 2px solid black' id="remail" name="qnt">
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+                <button type="submit" class="btn btn-danger btn-flat" id='send' name="edit"><i class="bi bi-send"></i>Send</button>
+                </form>
+            </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
