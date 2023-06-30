@@ -1,4 +1,6 @@
 <?php    
+ini_set('SMTP', 'smtp.gmail.com');
+ini_set('smtp_port', 587);
 
 require "../assets/connection/connect.php";
 
@@ -66,38 +68,28 @@ if(!empty($_POST["notification_id"])){
  
   }
 
+  require 'vendor/autoload.php';
 
   if(!empty($_POST["semail"])){
      $smail = $_POST["semail"];
     $remail = $_POST['remail'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
+    $mail = new PHPMailer\PHPMailer\PHPMailer();
+    $mailHeaders  = $headers = 'From: email@example.com' . "\r\n" .
+    'Reply-To: email@example.com' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+    $mail->Port = 587;
+
+    if(mail($remail, $subject, $message, $mailHeaders)
+    ){
+        echo "Your Information is Recieved";
+    }else{
+        echo "Your Information NOT sent";
+    }
 
 
-$mail = new PHPMailer(true);
-
-$mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';
-$mail->SMTPAuth= true;
-$mail->Username = "betrandajebua@gmail.com";
-$mail->Password = "Beto1234beto2@";
-$mail->SMTPSecure = 'ssl';
-$mail->Port = 465;
-
-
-
-$mail->setFrom('betrandajebua@gmail.com',"Betrand Ajebua");
-$mail->addAddress($remail);
-$mail->isHTML(true);
-$mail->Subject = $subject;
-$mail->Body = $message;
-
-$mail->send();
-if($mail->send()){
-    echo ('Email Sent');
-}else{  
-    echo ("NOt Sent");
-}
 
  }
 ?> 
