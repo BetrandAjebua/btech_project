@@ -131,14 +131,19 @@ try{
         $d_id = ($_POST['d_id']);
         // echo ($d_id."  space  ");
         $b_type = ($_POST['btype']);
+        echo $b_type;
         if ($b_type == 'A') {
             $b_id = 1;
+            // echo ($b_id."  space  ".$b_type);
         } else if ($b_type == 'B') {
             $b_id = 2;
+            // echo ($b_id."  space  ".$b_type);
         } else if ($b_type == 'AB') {
             $b_id = 3;
+            // echo ($b_id."  space  ".$b_type);
         } else if ($b_type == 'O') {
             $b_id = 4;
+            // echo ($b_id."  space  ".$b_type);
         }
         $tr_id  = $db->prepare("SELECT COUNT(*) FROM donation");
         $tr_id->execute();

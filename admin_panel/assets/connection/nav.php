@@ -93,9 +93,9 @@
             <div class="col-sm-9">
               <select name="btype" id="btype">
                 <option value="A">A</option>
-                <option value="A">B</option>
-                <option value="A">AB</option>
-                <option value="A">O</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
               </select>
             </div>
           </div>
