@@ -109,7 +109,7 @@ if (!empty($_POST["semail"])) {
 
         $check = $mail->send();
         if ($check) {
-            $saveMessage= $db->prepare("INSERT INTO sentemail ( receiver, `subject`, `message`,  receiver_id) 
+            $saveMessage = $db->prepare("INSERT INTO sentemail ( receiver, `subject`, `message`,  receiver_id) 
             VALUES ('$remail', '$subject', '$message',  '$receiver_id')")->execute();
 
             echo '<div class="alert-success"><span>Message Sent</span> </div>';
@@ -118,9 +118,48 @@ if (!empty($_POST["semail"])) {
     } catch (Exception $e) {
         echo  '<div class="alert-error"><span>' . $e->getMessage() . '</span> </div>';
     }
-
-
-    // Adding Donation
-
-    if(isset($_POST))
 }
+
+
+
+// Adding Donation
+if (isset($_POST['qnt'])) {
+
+try{
+   
+        $quantity = ($_POST['qnt']);
+        $d_id = ($_POST['d_id']);
+        // echo ($d_id."  space  ");
+        $b_type = ($_POST['btype']);
+        if ($b_type == 'A') {
+            $b_id = 1;
+        } else if ($b_type == 'B') {
+            $b_id = 2;
+        } else if ($b_type == 'AB') {
+            $b_id = 3;
+        } else if ($b_type == 'O') {
+            $b_id = 4;
+        }
+        $tr_id  = $db->prepare("SELECT COUNT(*) FROM donation");
+        $tr_id->execute();
+        $tr_id = "tranID$$" . $b_id . "_/d" . $d_id . "tr_" . $tr_id->fetch()[0];
+        // echo ($tr_id);
+        $query_insert = $db->prepare("INSERT INTO donation (donor_id, blood_id, quantity, donation_id) VALUES ('$d_id', '$b_id', '$quantity', '$tr_id')");
+        $query_fetch = $db->prepare("SELECT quantity from blood_type WHERE bloodId='$b_id'");
+        $query_fetch->execute();
+        $currentVal=$query_fetch->fetch()[0];
+        $finalVal = $currentVal+$quantity;
+        // echo($finalVal);
+        $query_update = $db->prepare( "UPDATE blood_type SET quantity = $finalVal WHERE bloodID =' $b_id'")->execute();
+    $query_insert->execute();
+    header("location: donor.php");
+        
+    
+
+}catch(PDOException $e){
+
+}
+
+}
+
+
