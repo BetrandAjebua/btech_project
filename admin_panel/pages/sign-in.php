@@ -1,4 +1,27 @@
 
+<?php
+if(!empty($_POST)){
+    try{
+        if(!isset($_POST["submit"])){
+            $dname = htmlentities($_POST["f-name"]);
+            $password = htmlentities($_POST["password"]);
+          
+            $query= $db->prepare("SELECT * FROM  admin WHERE a_name='$dname' AND a_password='$password'");
+                $query->execute();
+               if($query->rowCount()>0){
+                header("Location: ../index.php");
+                echo "yes";
+               }
+        }
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }catch(PDOException $e){
+        echo("Error: ".$e->getMessage());
+    }
+}
+?>
+<a href=""></a>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,11 +35,6 @@
     <div class="row">
       <div class="col-12">
 
-      
-        <!-- Navbar -->
-        <?php include "../assets/connection/nav.php" ?>
-
-        <!-- End Navbar -->
       </div>
     </div>
   </div>
@@ -50,10 +68,10 @@
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start">
+                <form role="form" class="text-start" action="<?php $_SELF?>" method="post">
                   <div class="input-group input-group-outline my-3">
-                    <label class="form-label">Email</label>
-                    <input type="email" class="form-control">
+                    <label class="form-label">Names</label>
+                    <input type="text" class="form-control">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>
@@ -64,7 +82,7 @@
                     <label class="form-check-label mb-0 ms-2" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
-                    <button type="button" class="btn bg-gradient-danger w-100 my-4 mb-2">Sign in</button>
+                    <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Sign in</button>
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?

@@ -36,7 +36,7 @@
           </li>
           <li class="dropdown"><a href="#"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/admin_section/alogin.php">Login</a></li>
+              <li><a href="/admin_panel/pages/sign-in.php">Login</a></li>
               <li><a class="scrollto nav-link" href="#contact">Contact Admin</a></li>
 
             </ul>
