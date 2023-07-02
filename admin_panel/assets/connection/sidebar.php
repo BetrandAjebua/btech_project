@@ -98,7 +98,7 @@
                         
                     <i class="fa-solid fa-message-dots"></i>
                     </div>
-                    <span class="nav-link-text ms-1">MakeBlood Request</span>
+                    <span class="nav-link-text ms-1">Donations</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -111,7 +111,7 @@
                         
                     <i class="fa-solid fa-message-dots"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Workers</span>
+                    <span class="nav-link-text ms-1">Users</span>
                 </a>
             </li>
             <li class="nav-item">
@@ -124,7 +124,7 @@
                         
                     <i class="fa-solid fa-message-dots"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Delete-Account</span>
+                    <span class="nav-link-text ms-1">Data Bank</span>
                 </a>
             </li>
         </ul>

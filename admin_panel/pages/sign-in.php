@@ -1,10 +1,10 @@
-
 <?php
-if(!empty($_POST)){
-    try{
-        if(!isset($_POST["submit"])){
-            $dname = htmlentities($_POST["f-name"]);
-            $password = htmlentities($_POST["password"]);
+if(isset($_POST['aname'])){
+  
+require "../assets/connection/connect.php";
+    
+            $dname = htmlentities($_POST["aname"]);
+            $password = htmlentities($_POST["apass"]);
           
             $query= $db->prepare("SELECT * FROM  admin WHERE a_name='$dname' AND a_password='$password'");
                 $query->execute();
@@ -12,14 +12,9 @@ if(!empty($_POST)){
                 header("Location: ../index.php");
                 echo "yes";
                }
-        }
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }catch(PDOException $e){
-        echo("Error: ".$e->getMessage());
-    }
 }
 ?>
-<a href=""></a>
+
 
 
 <!DOCTYPE html>
@@ -68,21 +63,21 @@ if(!empty($_POST)){
                 </div>
               </div>
               <div class="card-body">
-                <form role="form" class="text-start" action="<?php $_SELF?>" method="post">
+                <form role="form" class="text-start" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Names</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="aname">
                   </div>
                   <div class="input-group input-group-outline mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control">
+                    <input type="password" name="apass" class="form-control">
                   </div>
                   <div class="form-check form-switch d-flex align-items-center mb-3">
                     <input class="form-check-input" type="checkbox" id="rememberMe">
                     <label class="form-check-label mb-0 ms-2" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
-                    <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Sign in</button>
+                    <button type="submit" name="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Sign in</button>
                   </div>
                   <p class="mt-4 text-sm text-center">
                     Don't have an account?

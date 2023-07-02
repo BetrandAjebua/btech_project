@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="login1.css">
     <link rel="stylesheet" href="login1.css">
     <link rel="stylesheet" href="../bootstrap-5.2.3-dist/bootstrap-5.2.3-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../jquery-ui-1.13.2.custom/jquery-ui-1.13.2.custom/jquery-ui.structure.css">
@@ -103,7 +103,7 @@
 
 <!--LOGIN INSTEAD-->
 <div class="login-inst">
-    <a class="text-danger h6" href="login.html">Login instead?</a>
+    <a class="text-danger h6" href="login.php">Login instead?</a>
 </div>
 <!--END OF LOGIN INSTEAD-->
 
