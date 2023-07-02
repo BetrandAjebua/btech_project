@@ -119,14 +119,63 @@ if (!empty($_POST["semail"])) {
         echo  '<div class="alert-error"><span>' . $e->getMessage() . '</span> </div>';
     }
 }
+// Section Ends
+
+
+// Notification Messages Response
+
+
+if (!empty($_POST["cl_id"])) {
+
+    $remail = $_POST['remail'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $receiver_id = "ExClient".$_POST['cl_id'];
+
+    try {
+
+
+
+
+
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = "kingsbloodbank@gmail.com";
+        $mail->Password = 'lwxzfxrtydjwbxal';
+
+
+
+        $mail->SMTPSecure = "tls";
+        $mail->Port = '587';
+
+        $mail->setFrom($remail);
+        $mail->addAddress($remail);
+
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        $check = $mail->send();
+        if ($check) {
+            $saveMessage = $db->prepare("INSERT INTO sentemail ( receiver, `subject`, `message`,  receiver_id) 
+            VALUES ('$remail', '$subject', '$message',  '$receiver_id')")->execute();
+
+            echo '<div class="alert-success"><span>Message Sent</span> </div>';
+            header("location: donor.php");
+        }
+    } catch (Exception $e) {
+        echo  '<div class="alert-error"><span>' . $e->getMessage() . '</span> </div>';
+    }
+}
 
 
 
 // Adding Donation
 if (isset($_POST['qnt'])) {
 
-try{
-   
+    try {
+
         $quantity = ($_POST['qnt']);
         $d_id = ($_POST['d_id']);
         // echo ($d_id."  space  ");
@@ -152,19 +201,55 @@ try{
         $query_insert = $db->prepare("INSERT INTO donation (donor_id, blood_id, quantity, donation_id) VALUES ('$d_id', '$b_id', '$quantity', '$tr_id')");
         $query_fetch = $db->prepare("SELECT quantity from blood_type WHERE bloodId='$b_id'");
         $query_fetch->execute();
-        $currentVal=$query_fetch->fetch()[0];
-        $finalVal = $currentVal+$quantity;
+        $currentVal = $query_fetch->fetch()[0];
+        $finalVal = $currentVal + $quantity;
         // echo($finalVal);
-        $query_update = $db->prepare( "UPDATE blood_type SET quantity = $finalVal WHERE bloodID =' $b_id'")->execute();
-    $query_insert->execute();
-    header("location: donor.php");
-        
-    
-
-}catch(PDOException $e){
-
-}
-
+        $query_update = $db->prepare("UPDATE blood_type SET quantity = $finalVal WHERE bloodID =' $b_id'")->execute();
+        $query_insert->execute();
+        header("location: donor.php");
+    } catch (PDOException $e) {
+    }
 }
 
 
+
+// Making  Blood transfution
+if (isset($_POST['p_qnt'])) {
+
+    try {
+
+        $quantity = ($_POST['p_qnt']);
+        $p_id = ($_POST['pa_name']);
+        // echo ($p_id."  space  ");
+        $b_type = ($_POST['btype']);
+        echo $b_type;
+        if ($b_type == 'A') {
+            $b_id = 1;
+            // echo ($b_id."  space  ".$b_type);
+        } else if ($b_type == 'B') {
+            $b_id = 2;
+            // echo ($b_id."  space  ".$b_type);
+        } else if ($b_type == 'AB') {
+            $b_id = 3;
+            // echo ($b_id."  space  ".$b_type);
+        } else if ($b_type == 'O') {
+            $b_id = 4;
+            // echo ($b_id."  space  ".$b_type);
+        }
+        $tr_id  = $db->prepare("SELECT COUNT(*) FROM transfusion");
+        $tr_id->execute();
+        $tr_id = "Kings_pat" . $b_id . "_/d" . $p_id . "tr_" . $tr_id->fetch()[0];
+        // echo ($tr_id);
+        $query_insert = $db->prepare("INSERT INTO transfusion (patient_id, blood_id, quantity, transfution_id) VALUES ('$p_id', '$b_id', '$quantity', '$tr_id')");
+        $query_fetch = $db->prepare("SELECT quantity from blood_type WHERE bloodId='$b_id'");
+        $query_fetch->execute();
+        $currentVal = $query_fetch->fetch()[0];
+        $finalVal = $currentVal - $quantity;
+        // echo($finalVal);
+        $query_update = $db->prepare("UPDATE blood_type SET quantity = $finalVal WHERE bloodID =' $b_id'")->execute();
+        $query_insert->execute();
+        header("location: ../index.php");
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}

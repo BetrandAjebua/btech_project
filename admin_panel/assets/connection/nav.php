@@ -5,9 +5,15 @@
     <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
       <ul class="navbar-nav  justify-content-end">
         <li class="nav-item d-flex align-items-right">
-          <button data-toggle="modal" data-target="#add_donation" class="nav-link text-body font-weight-bold px-0 btn-danger  btn-rounded-0 p-1">
+          <button data-toggle="modal" data-target="#add_donation" class="nav-link text-body font-weight-bold  btn-danger  rounded px-2">
             <i class="fa fa-plus me-sm-1 text-white"></i>
             <span class="d-sm-inline d-none text-white">Add donation</span>
+          </button>
+        </li>
+        <li  class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <button data-toggle="modal" data-target="#blood_trans" class="nav-link text-body font-weight-bold btn-danger  rounded pl-2 pr-2 ml-2">
+            <i class="fa fa-minus me-sm-1 text-white"></i>
+            <span class="d-sm-inline d-none text-white">Blood Transfer</span>
           </button>
         </li>
         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -54,6 +60,77 @@
   </div>
 </nav>
 
+
+<!-- Nav Section Ends Here -->
+
+<!-- Blood Donation Modal Starts -->
+<div class="modal fade" id="blood_trans">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><b>Validate Transfusion</b></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="POST" action="/admin_panel/pages/action.php">
+          <input type="hidden" class="catid" name="id">
+          <div class="form-group">
+            <label for="pname" class="col-sm-3 control-label">Patient Name</label>
+
+            <div class="col-sm-9">
+              <select name="pa_name" id="btype">
+
+                <?php
+                $query = $db->prepare("SELECT * FROM patient");
+                $query->execute();
+                foreach ($query->fetchAll() as $key => $value) {
+                  
+
+
+                ?>
+                  <option value="<?php echo $value['p_id'];?>"><?php echo $value['p_name'];?></option>
+                <?php
+                }
+                ?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="btype" class="col-sm-3 control-label">Blood Type</label>
+
+            <div class="col-sm-9">
+              <select name="btype" id="btype">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="p_qnt" class="col-sm-3 control-label">Quantity</label>
+
+            <div class="col-sm-9">
+              <input type="number" id="qnt" class="form-control" style='border: 2px solid black' id="remail" name="p_qnt">
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+            <button type="submit" class="btn btn-danger btn-flat" id='send' name="edit"><i class="bi bi-send"></i>Send</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- Blood Donation Modal End -->
+
+<!-- Section For Blood Transfusion Starts -->
 <div class="modal fade" id="add_donation">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -117,3 +194,5 @@
   </div>
 </div>
 </div>
+
+<!-- End of Blood Transfusion  -->
