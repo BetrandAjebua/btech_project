@@ -196,7 +196,7 @@ if (isset($_POST['qnt'])) {
         }
         $tr_id  = $db->prepare("SELECT COUNT(*) FROM donation");
         $tr_id->execute();
-        $tr_id = "tranID$$" . $b_id . "_/d" . $d_id . "tr_" . $tr_id->fetch()[0];
+        $tr_id = "Donation$$" . $b_id . "_/d" . $d_id . "tr_" . $tr_id->fetch()[0];
         // echo ($tr_id);
         $query_insert = $db->prepare("INSERT INTO donation (donor_id, blood_id, quantity, donation_id) VALUES ('$d_id', '$b_id', '$quantity', '$tr_id')");
         $query_fetch = $db->prepare("SELECT quantity from blood_type WHERE bloodId='$b_id'");
@@ -238,7 +238,7 @@ if (isset($_POST['p_qnt'])) {
         }
         $tr_id  = $db->prepare("SELECT COUNT(*) FROM transfusion");
         $tr_id->execute();
-        $tr_id = "Kings_pat" . $b_id . "_/d" . $p_id . "tr_" . $tr_id->fetch()[0];
+        $tr_id = "Trans" . $b_id . "_/d" . $p_id . "tr_" . $tr_id->fetch()[0];
         // echo ($tr_id);
         $query_insert = $db->prepare("INSERT INTO transfusion (patient_id, blood_id, quantity, transfution_id) VALUES ('$p_id', '$b_id', '$quantity', '$tr_id')");
         $query_fetch = $db->prepare("SELECT quantity from blood_type WHERE bloodId='$b_id'");

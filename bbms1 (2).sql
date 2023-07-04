@@ -202,7 +202,7 @@ INSERT INTO `patient` (`p_id`, `p_name`, `p_password`, `p_age`, `p_phone`, `p_di
 CREATE TABLE `patient_request` (
   `pr_id` int(11) NOT NULL,
   `pr_name` varchar(255) NOT NULL,
-  `pr_password` varchar(255) NOT NULL,
+  `pr_password` varchar(255) NOT NULL, 
   `pr_age` int(120) NOT NULL,
   `pr_phone` varchar(16) NOT NULL,
   `pr_disease` varchar(255) NOT NULL,
