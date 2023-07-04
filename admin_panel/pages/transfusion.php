@@ -21,13 +21,13 @@
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-right">
-              <button  onclick="naveto1()" class="nav-link text-body font-weight-bold  btn-danger  rounded px-2">
+              <button id="btn1" onclick="naveto1()" class="nav-link text-body font-weight-bold  btn-danger  rounded px-2">
                 <i class="fa fa-plus me-sm-1 text-white"></i>
                 <span class="d-sm-inline d-none text-white">Donation Record</span>
               </button>
             </li>
             <li class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-              <button  onclick="naveto2()" class="nav-link text-body font-weight-bold btn-danger  rounded pl-2 pr-2 ml-2">
+              <button id="btn2"  onclick="naveto2()" class="nav-link text-body font-weight-bold btn-danger  rounded pl-2 pr-2 ml-2">
                 <i class="fa fa-minus me-sm-1 text-white"></i>
                 <span class="d-sm-inline d-none text-white">Transfered Blood Record</span>
               </button>
@@ -38,14 +38,22 @@
     </nav>
 
 <script>
+    $("#btn1").fadeOut();
   function naveto1(){
-
-    $("#donations").fadeOut();
-    $("#transfusions").fadeIn();
-  }
-  function naveto2(){
     $("#donations").fadeIn();
     $("#transfusions").fadeOut();
+    $("#btn2").fadeIn();
+  
+
+
+
+  }
+  function naveto2(){
+    $("#donations").fadeOut();
+    $("#btn1").fadeIn();
+    $("#btn2").fadeOut();
+    $("#transfusions").fadeIn();
+
     
   }
 </script>
