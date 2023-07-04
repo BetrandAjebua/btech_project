@@ -38,7 +38,9 @@
     </nav>
 
 <script>
-    $("#btn1").fadeOut();
+ $(document).ready(function(){
+  
+ })
   function naveto1(){
     $("#donations").fadeIn();
     $("#transfusions").fadeOut();
