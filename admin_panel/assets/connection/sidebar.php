@@ -89,7 +89,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-in.php') {
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/transfusion.php') {
                                                     echo ('active bg-gradient-danger');
                                                 } else {
                                                     echo ("inactive");
@@ -102,7 +102,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-up.php') {
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/users.php') {
                                                     echo ('active bg-gradient-danger');
                                                 } else {
                                                     echo ("inactive");
@@ -115,11 +115,11 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/sign-up.php') {
+                <a class="nav-link text-white <?php if ($_SERVER['REQUEST_URI'] == '/admin_panel/pages/bank_visual.php') {
                                                     echo ('active bg-gradient-danger');
                                                 } else {
                                                     echo ("inactive");
-                                                }   ?> " href="/admin_panel/pages/sign-up.php">
+                                                }   ?> " href="/admin_panel/pages/bank_visual.php">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         
                     <i class="fa-solid fa-message-dots"></i>

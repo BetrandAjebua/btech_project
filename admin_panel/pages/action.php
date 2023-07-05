@@ -30,7 +30,7 @@ if (!empty($_POST["confdr_id"])) {
    (d_name, d_password, d_email, d_number, d_city, d_home_address, 
    d_blood_group, d_mstatus, guadian_name, guadian_number,
     guadian_home_address, d_age, reg_time)
-   SELECT dr_name, dr_pass,dr_email, dr_number,	dr_city,	
+   SELECT dr_name, dr_pass, dr_email, dr_number,	dr_city,	
    dr_home_address,	dr_bgroup, dr_marital_status, drg_name,
     drg_number, drg_address, dr_age,dr_time
    FROM donor_request WHERE dr_id = $_POST[confdr_id]");
@@ -130,7 +130,7 @@ if (!empty($_POST["cl_id"])) {
     $remail = $_POST['remail'];
     $subject = $_POST['subject'];
     $message = $_POST['message'];
-    $receiver_id = "ExClient".$_POST['cl_id'];
+    $receiver_id = "ExClient" . $_POST['cl_id'];
 
     try {
 

@@ -38,13 +38,15 @@
     </nav>
 
 <script>
- $(document).ready(function(){
-  
- })
+
+  $("#btn1").hide();
+
   function naveto1(){
     $("#donations").fadeIn();
     $("#transfusions").fadeOut();
+    $("#btn1").hide();
     $("#btn2").fadeIn();
+  
   
 
 
@@ -52,8 +54,9 @@
   }
   function naveto2(){
     $("#donations").fadeOut();
+    $("#btn2").hide();
     $("#btn1").fadeIn();
-    $("#btn2").fadeOut();
+
     $("#transfusions").fadeIn();
 
     
