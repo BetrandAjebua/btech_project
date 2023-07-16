@@ -42,10 +42,12 @@
     </nav>
     <?php include "../assets/connection/nav.php"; ?>
     <!-- End Navbar -->
-    <div class="row">
+    <br><br>
 
-      <canvas id="myChart1" style="width:100%;max-width:600px" class="col-3"></canvas>
-      <canvas id="myChart2" style="width:100%;max-width:600px" class="col-3"></canvas>
+    <div class="row px-4">
+
+      <canvas id="myChart1" style="width:100%;max-width:600px" class="col-4"></canvas>
+      <canvas id="myChart2" style="width:100%;max-width:600px" class="col-4"></canvas>
 
     </div>
     <div class="container-fluid py-4 row-6">
